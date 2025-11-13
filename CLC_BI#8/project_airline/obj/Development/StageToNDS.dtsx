@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="45"
-  DTS:VersionGUID="{D6E03EF5-2FC6-4C0C-B3D2-B3A9BD5D05DF}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{6742C22D-9DD4-4B98-B83E-AD09A7774312}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2578,6 +2578,14 @@ WHERE IATA_CODE = ? AND SOURCE_ID = 'airports_csv'</property>
                           cachedName="AIRLINE_SK"
                           externalMetadataColumnId="Package\Import data from Stage to NDS\Import flights stage to nds\insert flights_nds.Inputs[OLE DB Destination Input].ExternalColumns[AIRLINE]"
                           lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 2.Outputs[Merge Join Output].Columns[AIRLINE_SK]" />
+                        <inputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\insert flights_nds.Inputs[OLE DB Destination Input].Columns[SOURCE_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SOURCE_ID"
+                          externalMetadataColumnId="Package\Import data from Stage to NDS\Import flights stage to nds\insert flights_nds.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_ID]"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 2.Outputs[Merge Join Output].Columns[SOURCE_ID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2716,6 +2724,12 @@ WHERE IATA_CODE = ? AND SOURCE_ID = 'airports_csv'</property>
                           dataType="wstr"
                           length="27"
                           name="MODIFIED" />
+                        <externalMetadataColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\insert flights_nds.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SOURCE_ID" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3483,6 +3497,17 @@ from nds_airports</property>
                           lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds.Outputs[OLE DB Source Output].Columns[WEATHER_DELAY]"
                           name="WEATHER_DELAY"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds.Outputs[OLE DB Source Output].Columns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_ID]"
+                          length="50"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds.Outputs[OLE DB Source Output].Columns[SOURCE_ID]"
+                          name="SOURCE_ID"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3621,6 +3646,12 @@ from nds_airports</property>
                           refId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds.Outputs[OLE DB Source Output].ExternalColumns[WEATHER_DELAY]"
                           dataType="r8"
                           name="WEATHER_DELAY" />
+                        <externalMetadataColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SOURCE_ID" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -3781,6 +3812,13 @@ from nds_airports</property>
                           dataType="r8"
                           lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds.Outputs[OLE DB Source Error Output].Columns[WEATHER_DELAY]"
                           name="WEATHER_DELAY" />
+                        <outputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds.Outputs[OLE DB Source Error Output].Columns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds.Outputs[OLE DB Source Error Output].Columns[SOURCE_ID]"
+                          name="SOURCE_ID" />
                         <outputColumn
                           refId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds.Outputs[OLE DB Source Error Output].Columns[created]"
                           dataType="wstr"
@@ -4156,6 +4194,17 @@ from nds_airports</property>
                           lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds.Outputs[OLE DB Source Output].Columns[WEATHER_DELAY]"
                           name="WEATHER_DELAY"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds.Outputs[OLE DB Source Output].Columns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_ID]"
+                          length="50"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds.Outputs[OLE DB Source Output].Columns[SOURCE_ID]"
+                          name="SOURCE_ID"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4294,6 +4343,12 @@ from nds_airports</property>
                           refId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds.Outputs[OLE DB Source Output].ExternalColumns[WEATHER_DELAY]"
                           dataType="r8"
                           name="WEATHER_DELAY" />
+                        <externalMetadataColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SOURCE_ID" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -4454,6 +4509,13 @@ from nds_airports</property>
                           dataType="r8"
                           lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds.Outputs[OLE DB Source Error Output].Columns[WEATHER_DELAY]"
                           name="WEATHER_DELAY" />
+                        <outputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds.Outputs[OLE DB Source Error Output].Columns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds.Outputs[OLE DB Source Error Output].Columns[SOURCE_ID]"
+                          name="SOURCE_ID" />
                         <outputColumn
                           refId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds.Outputs[OLE DB Source Error Output].Columns[created]"
                           dataType="wstr"
@@ -4681,6 +4743,13 @@ from nds_airports</property>
                           cachedDataType="r8"
                           cachedName="WEATHER_DELAY"
                           lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort.Outputs[Sort Output].Columns[WEATHER_DELAY]" />
+                        <inputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join.Inputs[Merge Join Left Input].Columns[SOURCE_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SOURCE_ID"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort.Outputs[Sort Output].Columns[SOURCE_ID]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -5131,6 +5200,21 @@ from nds_airports</property>
                               name="InputColumnID">#{Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join.Inputs[Merge Join Right Input].Columns[iata_code_sk]}</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join.Outputs[Merge Join Output].Columns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join.Outputs[Merge Join Output].Columns[SOURCE_ID]"
+                          name="SOURCE_ID">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join.Inputs[Merge Join Left Input].Columns[SOURCE_ID]}</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -5334,6 +5418,13 @@ from nds_airports</property>
                           cachedDataType="r8"
                           cachedName="WEATHER_DELAY"
                           lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 2.Outputs[Sort Output].Columns[WEATHER_DELAY]" />
+                        <inputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 1.Inputs[Merge Join Left Input].Columns[SOURCE_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SOURCE_ID"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 2.Outputs[Sort Output].Columns[SOURCE_ID]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -5784,6 +5875,21 @@ from nds_airports</property>
                               name="InputColumnID">#{Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 1.Inputs[Merge Join Right Input].Columns[iata_code_sk]}</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 1.Outputs[Merge Join Output].Columns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 1.Outputs[Merge Join Output].Columns[SOURCE_ID]"
+                          name="SOURCE_ID">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 1.Inputs[Merge Join Left Input].Columns[SOURCE_ID]}</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -5984,6 +6090,13 @@ from nds_airports</property>
                           cachedDataType="i4"
                           cachedName="AIRLINE_SK"
                           lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 4.Outputs[Sort Output].Columns[AIRLINE_SK]" />
+                        <inputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 2.Inputs[Merge Join Left Input].Columns[SOURCE_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SOURCE_ID"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 4.Outputs[Sort Output].Columns[SOURCE_ID]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -6472,6 +6585,21 @@ from nds_airports</property>
                               name="InputColumnID">#{Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 2.Inputs[Merge Join Right Input].Columns[DESTINATION_AIRPORT_SK]}</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 2.Outputs[Merge Join Output].Columns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 2.Outputs[Merge Join Output].Columns[SOURCE_ID]"
+                          name="SOURCE_ID">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 2.Inputs[Merge Join Left Input].Columns[SOURCE_ID]}</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -6668,6 +6796,13 @@ from nds_airports</property>
                           cachedDataType="i4"
                           cachedName="ORIGIN_AIRPORT_SK"
                           lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 6.Outputs[Sort Output].Columns[ORIGIN_AIRPORT_SK]" />
+                        <inputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 3.Inputs[Merge Join Left Input].Columns[SOURCE_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SOURCE_ID"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 6.Outputs[Sort Output].Columns[SOURCE_ID]" />
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -7101,6 +7236,21 @@ from nds_airports</property>
                               dataType="System.Int32"
                               description="The input column associated with this output column"
                               name="InputColumnID">#{Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 3.Inputs[Merge Join Right Input].Columns[iata_code_sk]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 3.Outputs[Merge Join Output].Columns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 3.Outputs[Merge Join Output].Columns[SOURCE_ID]"
+                          name="SOURCE_ID">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="The input column associated with this output column"
+                              name="InputColumnID">#{Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 3.Inputs[Merge Join Left Input].Columns[SOURCE_ID]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -7626,6 +7776,24 @@ from nds_airports</property>
                               name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort.Inputs[Sort Input].Columns[SOURCE_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SOURCE_ID"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds.Outputs[OLE DB Source Output].Columns[SOURCE_ID]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -8040,6 +8208,21 @@ from nds_airports</property>
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
                               name="SortColumnId">#{Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds.Outputs[OLE DB Source Output].Columns[WEATHER_DELAY]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort.Outputs[Sort Output].Columns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort.Outputs[Sort Output].Columns[SOURCE_ID]"
+                          name="SOURCE_ID">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds.Outputs[OLE DB Source Output].Columns[SOURCE_ID]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -8666,6 +8849,24 @@ from nds_airports</property>
                               name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 2.Inputs[Sort Input].Columns[SOURCE_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SOURCE_ID"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds.Outputs[OLE DB Source Output].Columns[SOURCE_ID]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -9080,6 +9281,21 @@ from nds_airports</property>
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
                               name="SortColumnId">#{Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds.Outputs[OLE DB Source Output].Columns[WEATHER_DELAY]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 2.Outputs[Sort Output].Columns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 2.Outputs[Sort Output].Columns[SOURCE_ID]"
+                          name="SOURCE_ID">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds.Outputs[OLE DB Source Output].Columns[SOURCE_ID]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -9824,6 +10040,24 @@ from nds_airports</property>
                               name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 4.Inputs[Sort Input].Columns[SOURCE_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SOURCE_ID"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join.Outputs[Merge Join Output].Columns[SOURCE_ID]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -10255,6 +10489,21 @@ from nds_airports</property>
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
                               name="SortColumnId">#{Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join.Outputs[Merge Join Output].Columns[AIRLINE_SK]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 4.Outputs[Sort Output].Columns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 4.Outputs[Sort Output].Columns[SOURCE_ID]"
+                          name="SOURCE_ID">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join.Outputs[Merge Join Output].Columns[SOURCE_ID]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -10779,6 +11028,24 @@ from nds_airports</property>
                               name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 5.Inputs[Sort Input].Columns[SOURCE_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SOURCE_ID"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 3.Outputs[Merge Join Output].Columns[SOURCE_ID]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -11195,6 +11462,21 @@ from nds_airports</property>
                               dataType="System.Int32"
                               description="Specifies the lineage identifier of the input column that is associated with this output column."
                               name="SortColumnId">#{Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 3.Outputs[Merge Join Output].Columns[DESTINATION_AIRPORT_SK]}</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 5.Outputs[Sort Output].Columns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 5.Outputs[Sort Output].Columns[SOURCE_ID]"
+                          name="SOURCE_ID">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 3.Outputs[Merge Join Output].Columns[SOURCE_ID]}</property>
                           </properties>
                         </outputColumn>
                       </outputColumns>
@@ -11737,6 +12019,24 @@ from nds_airports</property>
                               name="NewSortKeyPosition">0</property>
                           </properties>
                         </inputColumn>
+                        <inputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 6.Inputs[Sort Input].Columns[SOURCE_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SOURCE_ID"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 1.Outputs[Merge Join Output].Columns[SOURCE_ID]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the comparison options for character data."
+                              name="NewComparisonFlags">0</property>
+                            <property
+                              dataType="System.Int32"
+                              description="Specifies the sort order of the column."
+                              name="NewSortKeyPosition">0</property>
+                          </properties>
+                        </inputColumn>
                       </inputColumns>
                       <externalMetadataColumns />
                     </input>
@@ -12166,6 +12466,21 @@ from nds_airports</property>
                               name="SortColumnId">#{Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 1.Outputs[Merge Join Output].Columns[ORIGIN_AIRPORT_SK]}</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 6.Outputs[Sort Output].Columns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 6.Outputs[Sort Output].Columns[SOURCE_ID]"
+                          name="SOURCE_ID">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the lineage identifier of the input column that is associated with this output column."
+                              name="SortColumnId">#{Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 1.Outputs[Merge Join Output].Columns[SOURCE_ID]}</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -12180,89 +12495,89 @@ from nds_airports</property>
                   startId="Package\Import data from Stage to NDS\Import flights stage to nds\Add created, modified.Outputs[Derived Column Output]" />
                 <path
                   refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Merge Join Output]"
-                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 4.Inputs[Sort Input]"
-                  name="Merge Join Output"
-                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join.Outputs[Merge Join Output]" />
-                <path
-                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Merge Join Output1]"
-                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 5.Inputs[Sort Input]"
-                  name="Merge Join Output"
-                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 3.Outputs[Merge Join Output]" />
-                <path
-                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Merge Join Output2]"
-                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 6.Inputs[Sort Input]"
-                  name="Merge Join Output"
-                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 1.Outputs[Merge Join Output]" />
-                <path
-                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Merge Join Output3]"
                   endId="Package\Import data from Stage to NDS\Import flights stage to nds\Add created, modified.Inputs[Derived Column Input]"
                   name="Merge Join Output"
                   startId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 2.Outputs[Merge Join Output]" />
                 <path
+                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Merge Join Output1]"
+                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 4.Inputs[Sort Input]"
+                  name="Merge Join Output"
+                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join.Outputs[Merge Join Output]" />
+                <path
+                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Merge Join Output2]"
+                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 5.Inputs[Sort Input]"
+                  name="Merge Join Output"
+                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 3.Outputs[Merge Join Output]" />
+                <path
+                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Merge Join Output3]"
+                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 6.Inputs[Sort Input]"
+                  name="Merge Join Output"
+                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 1.Outputs[Merge Join Output]" />
+                <path
                   refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output4]"
-                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort.Inputs[Sort Input]"
-                  name="OLE DB Source Output"
-                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds.Outputs[OLE DB Source Output]" />
-                <path
-                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output2]"
-                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 1.Inputs[Sort Input]"
-                  name="OLE DB Source Output"
-                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Load airlines nds.Outputs[OLE DB Source Output]" />
-                <path
-                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output3]"
-                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 3.Inputs[Sort Input]"
-                  name="OLE DB Source Output"
-                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Load airports nds.Outputs[OLE DB Source Output]" />
-                <path
-                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output]"
-                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 2.Inputs[Sort Input]"
-                  name="OLE DB Source Output"
-                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds.Outputs[OLE DB Source Output]" />
-                <path
-                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output1]"
                   endId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 3 1.Inputs[Sort Input]"
                   name="OLE DB Source Output"
                   startId="Package\Import data from Stage to NDS\Import flights stage to nds\Load airports nds 1.Outputs[OLE DB Source Output]" />
                 <path
+                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output2]"
+                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 3.Inputs[Sort Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Load airports nds.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output3]"
+                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 2.Inputs[Sort Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output]"
+                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort.Inputs[Sort Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output1]"
+                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 1.Inputs[Sort Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Load airlines nds.Outputs[OLE DB Source Output]" />
+                <path
                   refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output6]"
-                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 3.Inputs[Merge Join Right Input]"
-                  name="Sort Output"
-                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 3 1.Outputs[Sort Output]" />
-                <path
-                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output]"
-                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 1.Inputs[Merge Join Left Input]"
-                  name="Sort Output"
-                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 2.Outputs[Sort Output]" />
-                <path
-                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output1]"
-                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 1.Inputs[Merge Join Right Input]"
-                  name="Sort Output"
-                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 3.Outputs[Sort Output]" />
-                <path
-                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output2]"
-                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 2.Inputs[Merge Join Right Input]"
-                  name="Sort Output"
-                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 5.Outputs[Sort Output]" />
-                <path
-                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output3]"
-                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join.Inputs[Merge Join Right Input]"
-                  name="Sort Output"
-                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 1.Outputs[Sort Output]" />
-                <path
-                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output4]"
                   endId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join.Inputs[Merge Join Left Input]"
                   name="Sort Output"
                   startId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort.Outputs[Sort Output]" />
                 <path
-                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output5]"
+                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output]"
                   endId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 3.Inputs[Merge Join Left Input]"
                   name="Sort Output"
                   startId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 6.Outputs[Sort Output]" />
                 <path
-                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output7]"
+                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output1]"
                   endId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 2.Inputs[Merge Join Left Input]"
                   name="Sort Output"
                   startId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 4.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output2]"
+                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 1.Inputs[Merge Join Left Input]"
+                  name="Sort Output"
+                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 2.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output3]"
+                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 1.Inputs[Merge Join Right Input]"
+                  name="Sort Output"
+                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 3.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output4]"
+                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 2.Inputs[Merge Join Right Input]"
+                  name="Sort Output"
+                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 5.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output5]"
+                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join.Inputs[Merge Join Right Input]"
+                  name="Sort Output"
+                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 1.Outputs[Sort Output]" />
+                <path
+                  refId="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output7]"
+                  endId="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 3.Inputs[Merge Join Right Input]"
+                  name="Sort Output"
+                  startId="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 3 1.Outputs[Sort Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
@@ -12308,6 +12623,10 @@ from nds_airports</property>
           Size="212,42"
           Id="Package\Import data from Stage to NDS\Import airports stage to nds"
           TopLeft="98,105" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds"
+          TopLeft="101,214" />
         <EdgeLayout
           Id="Package\Import data from Stage to NDS.PrecedenceConstraints[Constraint]"
           TopLeft="206.25,59">
@@ -12330,10 +12649,6 @@ from nds_airports</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="205,42"
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds"
-          TopLeft="101,214" />
         <EdgeLayout
           Id="Package\Import data from Stage to NDS.PrecedenceConstraints[Constraint 1]"
           TopLeft="203.75,147">
@@ -12418,7 +12733,9 @@ from nds_airports</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12512,7 +12829,9 @@ from nds_airports</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12534,7 +12853,9 @@ from nds_airports</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12556,7 +12877,9 @@ from nds_airports</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12617,6 +12940,10 @@ from nds_airports</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="173,42"
+          Id="Package\Import data from Stage to NDS\Import airports stage to nds\OLE DB Command"
+          TopLeft="87.2727272727273,389.090909090909" />
+        <NodeLayout
           Size="150,42"
           Id="Package\Import data from Stage to NDS\Import airports stage to nds\Insert new row"
           TopLeft="445,387" />
@@ -12625,13 +12952,9 @@ from nds_airports</property>
           Id="Package\Import data from Stage to NDS\Import airports stage to nds\Add modified"
           TopLeft="101.818181818182,300" />
         <NodeLayout
-          Size="176,42"
-          Id="Package\Import data from Stage to NDS\Import airports stage to nds\Load airports_stage"
-          TopLeft="261,17" />
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Import data from Stage to NDS\Import airports stage to nds\OLE DB Command"
-          TopLeft="87.2727272727273,389.090909090909" />
+          Size="202,42"
+          Id="Package\Import data from Stage to NDS\Import airports stage to nds\Lookup IATA_CODE_NK"
+          TopLeft="245,192" />
         <NodeLayout
           Size="147,42"
           Id="Package\Import data from Stage to NDS\Import airports stage to nds\Add SourceID"
@@ -12641,9 +12964,31 @@ from nds_airports</property>
           Id="Package\Import data from Stage to NDS\Import airports stage to nds\Add created, modified"
           TopLeft="429,307" />
         <NodeLayout
-          Size="202,42"
-          Id="Package\Import data from Stage to NDS\Import airports stage to nds\Lookup IATA_CODE_NK"
-          TopLeft="245,192" />
+          Size="176,42"
+          Id="Package\Import data from Stage to NDS\Import airports stage to nds\Load airports_stage"
+          TopLeft="261,17" />
+        <EdgeLayout
+          Id="Package\Import data from Stage to NDS\Import airports stage to nds.Paths[Derived Column Output]"
+          TopLeft="521,349">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Import data from Stage to NDS\Import airports stage to nds.Paths[OLE DB Source Output]"
           TopLeft="348.75,59">
@@ -12739,50 +13084,6 @@ from nds_airports</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import airports stage to nds.Paths[Derived Column Output1]"
-          TopLeft="347.25,145">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47"
-              Start="0,0"
-              End="0,39.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,39.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import airports stage to nds.Paths[Derived Column Output]"
-          TopLeft="521,349">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38"
-              Start="0,0"
-              End="0,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Import data from Stage to NDS\Import airports stage to nds.Paths[Derived Column Output2]"
           TopLeft="173.545454545455,342">
           <EdgeLayout.Curve>
@@ -12796,6 +13097,28 @@ from nds_airports</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,39.590909090909" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data from Stage to NDS\Import airports stage to nds.Paths[Derived Column Output1]"
+          TopLeft="347.25,145">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12821,6 +13144,29 @@ from nds_airports</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Import data from Stage to NDS\Import airports stage to nds\Lookup IATA_CODE_NK">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[NDS_Airports]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Import data from Stage to NDS\Import airports stage to nds\Load airports_stage">
     <Properties>
       <Property>
@@ -12833,402 +13179,113 @@ from nds_airports</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import data from Stage to NDS\Import airports stage to nds\Lookup IATA_CODE_NK">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[NDS_Airports]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Import data from Stage to NDS\Import flights stage to nds">
     <LayoutInfo>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="162,42"
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Load airlines nds"
-          TopLeft="354,47" />
-        <NodeLayout
-          Size="252,42"
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds"
-          TopLeft="19,45" />
+          Size="108,42"
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 4"
+          TopLeft="223,315" />
         <NodeLayout
           Size="99,42"
           Id="Package\Import data from Stage to NDS\Import flights stage to nds\Sort"
           TopLeft="93,131" />
-        <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output4]"
-          TopLeft="143.75,87">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44"
-              Start="0,0"
-              End="0,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="108,42"
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 1"
-          TopLeft="381,134" />
-        <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output2]"
-          TopLeft="435,89">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45"
-              Start="0,0"
-              End="0,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="133,42"
           Id="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join"
           TopLeft="211,227" />
-        <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output4]"
-          TopLeft="142.5,173">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="114.166666666667,54"
-              Start="0,0"
-              End="114.166666666667,46.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.0148588410104" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.0148588410104"
-                    Point2="0,32.0148588410104"
-                    Point3="4,32.0148588410104" />
-                  <mssgle:LineSegment
-                    End="110.166666666667,32.0148588410104" />
-                  <mssgle:CubicBezierSegment
-                    Point1="110.166666666667,32.0148588410104"
-                    Point2="114.166666666667,32.0148588410104"
-                    Point3="114.166666666667,36.0148588410104" />
-                  <mssgle:LineSegment
-                    End="114.166666666667,46.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output3]"
-          TopLeft="435,176">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-136.666666666667,51"
-              Start="0,0"
-              End="-136.666666666667,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.2362555720654" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.2362555720654"
-                    Point2="0,30.2362555720654"
-                    Point3="-4,30.2362555720654" />
-                  <mssgle:LineSegment
-                    End="-132.666666666667,30.2362555720654" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-132.666666666667,30.2362555720654"
-                    Point2="-136.666666666667,30.2362555720654"
-                    Point3="-136.666666666667,34.2362555720654" />
-                  <mssgle:LineSegment
-                    End="-136.666666666667,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="253,42"
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds"
-          TopLeft="736,40" />
+          Size="108,42"
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 5"
+          TopLeft="1144,480" />
         <NodeLayout
-          Size="164,42"
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Load airports nds"
-          TopLeft="1069,43" />
+          Size="142,42"
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 2"
+          TopLeft="569,483" />
         <NodeLayout
           Size="108,42"
           Id="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 3"
           TopLeft="1092,129" />
-        <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output3]"
-          TopLeft="1148.5,85">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44"
-              Start="0,0"
-              End="0,36.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="108,42"
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 2"
-          TopLeft="808,137" />
-        <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output]"
-          TopLeft="862.25,82">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55"
-              Start="0,0"
-              End="0,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="142,42"
           Id="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 1"
-          TopLeft="946,237" />
-        <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output]"
-          TopLeft="862,179">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="132.666666666667,58"
-              Start="0,0"
-              End="132.666666666667,50.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.4122562674094" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,30.4122562674094"
-                    Point2="0,34.4122562674094"
-                    Point3="4,34.4122562674094" />
-                  <mssgle:LineSegment
-                    End="128.666666666667,34.4122562674094" />
-                  <mssgle:CubicBezierSegment
-                    Point1="128.666666666667,34.4122562674094"
-                    Point2="132.666666666667,34.4122562674094"
-                    Point3="132.666666666667,38.4122562674094" />
-                  <mssgle:LineSegment
-                    End="132.666666666667,50.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output1]"
-          TopLeft="1146,171">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-106.666666666667,66"
-              Start="0,0"
-              End="-106.666666666667,58.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.158774373259" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.158774373259"
-                    Point2="0,39.158774373259"
-                    Point3="-4,39.158774373259" />
-                  <mssgle:LineSegment
-                    End="-102.666666666667,39.158774373259" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-102.666666666667,39.158774373259"
-                    Point2="-106.666666666667,39.158774373259"
-                    Point3="-106.666666666667,43.158774373259" />
-                  <mssgle:LineSegment
-                    End="-106.666666666667,58.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="108,42"
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 4"
-          TopLeft="223,315" />
-        <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Merge Join Output]"
-          TopLeft="277.25,269">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46"
-              Start="0,0"
-              End="0,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="186,42"
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Add created, modified"
-          TopLeft="550,614" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds\insert flights_nds"
-          TopLeft="562,730" />
-        <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Derived Column Output]"
-          TopLeft="643,656">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,74"
-              Start="0,0"
-              End="0,66.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,66.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="947,237" />
         <NodeLayout
           Size="164,42"
           Id="Package\Import data from Stage to NDS\Import flights stage to nds\Load airports nds 1"
           TopLeft="1269,243" />
         <NodeLayout
           Size="108,42"
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 2"
+          TopLeft="808,137" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Load airlines nds"
+          TopLeft="354,47" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds\insert flights_nds"
+          TopLeft="562,714" />
+        <NodeLayout
+          Size="108,42"
           Id="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 3 1"
           TopLeft="1303,313" />
-        <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output1]"
-          TopLeft="1354,285">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28"
-              Start="0,0"
-              End="0,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="108,42"
           Id="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 6"
           TopLeft="965,317" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 3"
+          TopLeft="1128,402" />
+        <NodeLayout
+          Size="252,42"
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airlines nds"
+          TopLeft="19,45" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Load airports nds"
+          TopLeft="1069,43" />
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Add created, modified"
+          TopLeft="550,614" />
+        <NodeLayout
+          Size="253,42"
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds"
+          TopLeft="736,40" />
+        <NodeLayout
+          Size="108,42"
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 1"
+          TopLeft="381,134" />
         <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Merge Join Output2]"
-          TopLeft="1018,279">
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output7]"
+          TopLeft="1357,355">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38"
+              EndConnector="-135.666666666667,47"
               Start="0,0"
-              End="0,30.5">
+              End="-135.666666666667,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
+                    End="0,23.8857938718663" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.8857938718663"
+                    Point2="0,27.8857938718663"
+                    Point3="-4,27.8857938718663" />
+                  <mssgle:LineSegment
+                    End="-131.666666666667,27.8857938718663" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-131.666666666667,27.8857938718663"
+                    Point2="-135.666666666667,27.8857938718663"
+                    Point3="-135.666666666667,31.8857938718663" />
+                  <mssgle:LineSegment
+                    End="-135.666666666667,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13237,12 +13294,8 @@ from nds_airports</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="142,42"
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 3"
-          TopLeft="1128,402" />
         <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output5]"
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output]"
           TopLeft="1019,359">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13277,30 +13330,30 @@ from nds_airports</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output6]"
-          TopLeft="1357,355">
+          TopLeft="142.5,173">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-135.666666666667,47"
+              EndConnector="114.166666666667,54"
               Start="0,0"
-              End="-135.666666666667,39.5">
+              End="114.166666666667,46.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.8857938718663" />
+                    End="0,28.0148588410104" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.8857938718663"
-                    Point2="0,27.8857938718663"
-                    Point3="-4,27.8857938718663" />
+                    Point1="0,28.0148588410104"
+                    Point2="0,32.0148588410104"
+                    Point3="4,32.0148588410104" />
                   <mssgle:LineSegment
-                    End="-131.666666666667,27.8857938718663" />
+                    End="110.166666666667,32.0148588410104" />
                   <mssgle:CubicBezierSegment
-                    Point1="-131.666666666667,27.8857938718663"
-                    Point2="-135.666666666667,27.8857938718663"
-                    Point3="-135.666666666667,31.8857938718663" />
+                    Point1="110.166666666667,32.0148588410104"
+                    Point2="114.166666666667,32.0148588410104"
+                    Point3="114.166666666667,36.0148588410104" />
                   <mssgle:LineSegment
-                    End="-135.666666666667,39.5" />
+                    End="114.166666666667,46.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13309,12 +13362,298 @@ from nds_airports</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="108,42"
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Sort 5"
-          TopLeft="1144,480" />
         <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Merge Join Output1]"
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output5]"
+          TopLeft="435,176">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-136.666666666667,51"
+              Start="0,0"
+              End="-136.666666666667,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2362555720654" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.2362555720654"
+                    Point2="0,30.2362555720654"
+                    Point3="-4,30.2362555720654" />
+                  <mssgle:LineSegment
+                    End="-132.666666666667,30.2362555720654" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-132.666666666667,30.2362555720654"
+                    Point2="-136.666666666667,30.2362555720654"
+                    Point3="-136.666666666667,34.2362555720654" />
+                  <mssgle:LineSegment
+                    End="-136.666666666667,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output4]"
+          TopLeft="1144,502.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-433,0"
+              Start="0,0"
+              End="-425.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-425.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output3]"
+          TopLeft="1146,171">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-105.666666666667,66"
+              Start="0,0"
+              End="-105.666666666667,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.158774373259" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.158774373259"
+                    Point2="0,39.158774373259"
+                    Point3="-4,39.158774373259" />
+                  <mssgle:LineSegment
+                    End="-101.666666666667,39.158774373259" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-101.666666666667,39.158774373259"
+                    Point2="-105.666666666667,39.158774373259"
+                    Point3="-105.666666666667,43.158774373259" />
+                  <mssgle:LineSegment
+                    End="-105.666666666667,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output2]"
+          TopLeft="862,179">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="133.666666666667,58"
+              Start="0,0"
+              End="133.666666666667,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.4122562674095" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.4122562674095"
+                    Point2="0,34.4122562674095"
+                    Point3="4,34.4122562674095" />
+                  <mssgle:LineSegment
+                    End="129.666666666667,34.4122562674095" />
+                  <mssgle:CubicBezierSegment
+                    Point1="129.666666666667,34.4122562674095"
+                    Point2="133.666666666667,34.4122562674095"
+                    Point3="133.666666666667,38.4122562674095" />
+                  <mssgle:LineSegment
+                    End="133.666666666667,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output1]"
+          TopLeft="277,357">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="363,126"
+              Start="0,0"
+              End="363,118.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,59"
+                    Point2="0,63"
+                    Point3="4,63" />
+                  <mssgle:LineSegment
+                    End="359,63" />
+                  <mssgle:CubicBezierSegment
+                    Point1="359,63"
+                    Point2="363,63"
+                    Point3="363,67" />
+                  <mssgle:LineSegment
+                    End="363,118.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output]"
+          TopLeft="143.75,87">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output2]"
+          TopLeft="1148.5,85">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output1]"
+          TopLeft="435,89">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output4]"
+          TopLeft="1354,285">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[OLE DB Source Output3]"
+          TopLeft="862.25,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55"
+              Start="0,0"
+              End="0,47.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Merge Join Output3]"
+          TopLeft="1018.5,279">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Merge Join Output2]"
           TopLeft="1198.5,444">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13335,36 +13674,20 @@ from nds_airports</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="142,42"
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds\Merge Join 2"
-          TopLeft="569,488" />
         <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output7]"
-          TopLeft="277,357">
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Merge Join Output1]"
+          TopLeft="277.25,269">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="363,131"
+              EndConnector="0,46"
               Start="0,0"
-              End="363,123.5">
+              End="0,38.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,61.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,61.5"
-                    Point2="0,65.5"
-                    Point3="4,65.5" />
-                  <mssgle:LineSegment
-                    End="359,65.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="359,65.5"
-                    Point2="363,65.5"
-                    Point3="363,69.5" />
-                  <mssgle:LineSegment
-                    End="363,123.5" />
+                    End="0,38.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13374,31 +13697,19 @@ from nds_airports</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Sort Output2]"
-          TopLeft="1144,501">
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Merge Join Output]"
+          TopLeft="641.5,525">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-433,8"
+              EndConnector="0,89"
               Start="0,0"
-              End="-425.5,8">
+              End="0,81.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-212.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-212.5,0"
-                    Point2="-216.5,0"
-                    Point3="-216.5,4" />
-                  <mssgle:LineSegment
-                    End="-216.5,4" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-216.5,4"
-                    Point2="-216.5,8"
-                    Point3="-220.5,8" />
-                  <mssgle:LineSegment
-                    End="-425.5,8" />
+                    End="0,81.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13408,19 +13719,19 @@ from nds_airports</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Merge Join Output3]"
-          TopLeft="641.5,530">
+          Id="Package\Import data from Stage to NDS\Import flights stage to nds.Paths[Derived Column Output]"
+          TopLeft="643,656">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,84"
+              EndConnector="0,58"
               Start="0,0"
-              End="0,76.5">
+              End="0,50.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,76.5" />
+                    End="0,50.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -13433,7 +13744,28 @@ from nds_airports</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Import data from Stage to NDS\Import flights stage to nds\Load airports nds 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Import data from Stage to NDS\Import flights stage to nds\Load airlines nds">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import data from Stage to NDS\Import flights stage to nds\insert flights_nds">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -13459,6 +13791,14 @@ from nds_airports</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Import data from Stage to NDS\Import flights stage to nds\Load airports nds">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Import data from Stage to NDS\Import flights stage to nds\Load flights stage to ref airports nds">
     <Properties>
       <Property>
@@ -13468,35 +13808,6 @@ from nds_airports</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import data from Stage to NDS\Import flights stage to nds\Load airports nds">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import data from Stage to NDS\Import flights stage to nds\insert flights_nds">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Import data from Stage to NDS\Import flights stage to nds\Load airports nds 1">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
