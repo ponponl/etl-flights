@@ -56,6 +56,21 @@ CREATE TABLE ETL_Metadata (
 );
 GO
 
+-- Create NDS_ETL_Metadata table with similar schema
+CREATE TABLE NDS_ETL_Metadata (
+    Table_Name NVARCHAR(200) PRIMARY KEY,
+    LSET DATETIME NULL,
+    Last_Extract_ID BIGINT NULL,
+    Change_Detection_Column NVARCHAR(100) NULL,   -- e.g. UpdatedDate, ModifiedOn
+    Load_Type NVARCHAR(50) DEFAULT('Incremental'), -- Full or Incremental
+    Is_Initial_Load_Completed BIT DEFAULT(0),
+    Watermark_Value NVARCHAR(100) NULL,
+    Status NVARCHAR(50) NULL,                     -- e.g., Success, Failed
+    Last_Run_ID INT NULL REFERENCES dbo.ETL_Process_Log(Process_ID),
+    Updated_At DATETIME DEFAULT(GETDATE())
+);
+GO
+
 CREATE TABLE dbo.ETL_Error_Log (
     Error_ID INT IDENTITY(1,1) PRIMARY KEY,
     Process_ID INT REFERENCES dbo.ETL_Process_Log(Process_ID),
@@ -84,6 +99,22 @@ VALUES
 ('Flights3', '1990-11-01T00:00:00', 'UpdatedDate', 'Incremental', 1, 'Initialized');
 GO
 
+-- Initialize metadata for NDS tables (based on screenshot showing NDS_Airlines, NDS_Airports, NDS_Flights)
+INSERT INTO NDS_ETL_Metadata (
+    Table_Name,
+    LSET,
+    Change_Detection_Column,
+    Load_Type,
+    Is_Initial_Load_Completed,
+    Status
+)
+VALUES
+('NDS_Airlines', '1995-01-01T00:00:00', 'UpdatedDate', 'Incremental', 1, 'Initialized'),
+('NDS_Airports', '1995-01-01T00:00:00', 'UpdatedDate', 'Incremental', 1, 'Initialized'),
+('NDS_Flights',  '1995-01-01T00:00:00', 'UpdatedDate', 'Incremental', 1, 'Initialized');
+GO
+
 -- Verify the setup
 SELECT * FROM ETL_Metadata;
+SELECT * FROM NDS_ETL_Metadata;
 GO

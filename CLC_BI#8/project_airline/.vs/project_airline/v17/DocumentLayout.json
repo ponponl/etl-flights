@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "D:\\hcmus_courses\\BI\\Project\\git-repo\\CLC_BI#8\\project_airline\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B661D5E7-03F1-783D-E0BA-A4379B6827AD}|project_airline.dtproj|D:\\hcmus_courses\\BI\\Project\\git-repo\\CLC_BI#8\\project_airline\\StageToNDS.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
-      "RelativeMoniker": "D:0:0:{B661D5E7-03F1-783D-E0BA-A4379B6827AD}|project_airline.dtproj|solutionrelative:StageToNDS.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B661D5E7-03F1-783D-E0BA-A4379B6827AD}|project_airline.dtproj|D:\\hcmus_courses\\BI\\Project\\git-repo\\CLC_BI#8\\project_airline\\SourceToStage.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
-      "RelativeMoniker": "D:0:0:{B661D5E7-03F1-783D-E0BA-A4379B6827AD}|project_airline.dtproj|solutionrelative:SourceToStage.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
+      "AbsoluteMoniker": "D:0:0:{B661D5E7-03F1-783D-E0BA-A4379B6827AD}|project_airline.dtproj|D:\\hcmus_courses\\BI\\Project\\git-repo\\CLC_BI#8\\project_airline\\NDSToDDS.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design",
+      "RelativeMoniker": "D:0:0:{B661D5E7-03F1-783D-E0BA-A4379B6827AD}|project_airline.dtproj|solutionrelative:NDSToDDS.dtsx||{CC84AFBD-DA02-46F4-8623-9F07E5569EDB}|Design"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,35 +14,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "StageToNDS.dtsx [Design]",
-              "DocumentMoniker": "D:\\hcmus_courses\\BI\\Project\\git-repo\\CLC_BI#8\\project_airline\\StageToNDS.dtsx",
-              "RelativeDocumentMoniker": "StageToNDS.dtsx",
-              "ToolTip": "D:\\hcmus_courses\\BI\\Project\\git-repo\\CLC_BI#8\\project_airline\\StageToNDS.dtsx [Design]",
-              "RelativeToolTip": "StageToNDS.dtsx [Design]",
+              "Title": "NDSToDDS.dtsx [Design]",
+              "DocumentMoniker": "D:\\hcmus_courses\\BI\\Project\\git-repo\\CLC_BI#8\\project_airline\\NDSToDDS.dtsx",
+              "RelativeDocumentMoniker": "NDSToDDS.dtsx",
+              "ToolTip": "D:\\hcmus_courses\\BI\\Project\\git-repo\\CLC_BI#8\\project_airline\\NDSToDDS.dtsx [Design]",
+              "RelativeToolTip": "NDSToDDS.dtsx [Design]",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFkSURBVDhPjVO/S8NAGH2RtvSPaPeSwUVchS6CexYRJCBYUJC6SEFBBIXiIigKEYRSCC4unQTXDsVipkpbUJHSRTQ2/oimNCTnkOTMXdrqg4Pv\u002B\u002B69ly933wkAoFaqBGPQezdx9/CYO9xZOWU2CPF0aqVKXMcZuY7Kl2R6bomsbZ8sMwYAJvjCKOxtraNW1xTe5N8Gm7sHAIBaXVPC9Vg4KZSaNC7KIs0/jQQW5yUAQPn8gnIwrAM7nYGdzjB5cnIGqwuzDC9AxCDebSPebUdyc8DQWPx1Cx\u002BWQzrG722EtZEOeJgDwOgDukUQSyT5bdagUGrSBU6sW4A7ZNwiHQSHGBa/fANvFuDafZ4eNQgOLSx\u002B/gK06xa6dgpZKY\u002BNswbBlELAz0FRFumXjT7Bq\u002BXFpu31XpRFdJ5M3N73sO9rqMGxehWEI5Ci4puWTqsx\u002BK\u002BNnzAeWSlPxWEDgWGNg//PDLSc8AOMxO8cPcnGpQAAAABJRU5ErkJggg==",
-              "WhenOpened": "2025-11-13T03:57:16.849Z",
+              "WhenOpened": "2025-11-22T03:27:13.521Z",
+              "IsPinned": true,
               "EditorCaption": " [Design]"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SourceToStage.dtsx [Design]",
-              "DocumentMoniker": "D:\\hcmus_courses\\BI\\Project\\git-repo\\CLC_BI#8\\project_airline\\SourceToStage.dtsx",
-              "RelativeDocumentMoniker": "SourceToStage.dtsx",
-              "ToolTip": "D:\\hcmus_courses\\BI\\Project\\git-repo\\CLC_BI#8\\project_airline\\SourceToStage.dtsx [Design]",
-              "RelativeToolTip": "SourceToStage.dtsx [Design]",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFkSURBVDhPjVO/S8NAGH2RtvSPaPeSwUVchS6CexYRJCBYUJC6SEFBBIXiIigKEYRSCC4unQTXDsVipkpbUJHSRTQ2/oimNCTnkOTMXdrqg4Pv\u002B\u002B69ly933wkAoFaqBGPQezdx9/CYO9xZOWU2CPF0aqVKXMcZuY7Kl2R6bomsbZ8sMwYAJvjCKOxtraNW1xTe5N8Gm7sHAIBaXVPC9Vg4KZSaNC7KIs0/jQQW5yUAQPn8gnIwrAM7nYGdzjB5cnIGqwuzDC9AxCDebSPebUdyc8DQWPx1Cx\u002BWQzrG722EtZEOeJgDwOgDukUQSyT5bdagUGrSBU6sW4A7ZNwiHQSHGBa/fANvFuDafZ4eNQgOLSx\u002B/gK06xa6dgpZKY\u002BNswbBlELAz0FRFumXjT7Bq\u002BXFpu31XpRFdJ5M3N73sO9rqMGxehWEI5Ci4puWTqsx\u002BK\u002BNnzAeWSlPxWEDgWGNg//PDLSc8AOMxO8cPcnGpQAAAABJRU5ErkJggg==",
-              "WhenOpened": "2025-11-13T03:50:59.839Z",
-              "EditorCaption": " [Design]"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             }
           ]
         }
