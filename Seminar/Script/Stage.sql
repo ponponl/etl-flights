@@ -39,7 +39,7 @@ CREATE TABLE dbo.Sales_Combined_Stage (
     Quantity INT,
     Profit DECIMAL(18, 4), 
 
-    SourceID INT NOT NULL, 
+    SourceID NVARCHAR(50) NOT NULL, 
     CreateDate DATETIME DEFAULT GETDATE(),
     UpdateDate DATETIME NULL
 );
@@ -59,4 +59,12 @@ FOREIGN KEY (ProductID)
 REFERENCES dbo.Product_Stage (ProductID);
 GO
 
+
+ALTER TABLE dbo.Sales_Combined_Stage
+DROP CONSTRAINT FK_Sales_Customer;
+GO
+
+ALTER TABLE dbo.Sales_Combined_Stage
+DROP CONSTRAINT FK_Sales_Product;
+GO
 

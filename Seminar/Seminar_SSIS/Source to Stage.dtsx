@@ -1,18 +1,18 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/22/2025 12:13:31 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-J2MIDQL"
   DTS:CreatorName="DESKTOP-J2MIDQL\ADMIN"
-  DTS:DTSID="{98905928-2982-4B3C-AF54-2DEAE7724669}"
+  DTS:DTSID="{EEA70521-5958-427B-AD88-8973307C0D39}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.2"
   DTS:LocaleID="1033"
-  DTS:ObjectName="Package"
+  DTS:ObjectName="Source to Stage"
   DTS:PackageType="5"
-  DTS:VersionBuild="150"
-  DTS:VersionGUID="{A4F3A895-DF31-48FF-9CE7-2BCE12615246}">
+  DTS:VersionBuild="207"
+  DTS:VersionGUID="{30DF1D74-C652-468F-87BF-AA7FE99F2E6B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -184,7 +184,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="D:\BI\Seminar\Sales_South.csv">
+          DTS:ConnectionString="D:\BI\Seminar\etl-flights\Seminar\Data\Sales_South.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -193,16 +193,15 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Order ID"
-              DTS:DTSID="{D8C1D5A0-8E3C-4236-B721-10950FDB6EAD}"
+              DTS:DTSID="{2F1752D4-0571-44C5-B444-D472B9EBB20F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="133"
               DTS:TextQualified="True"
               DTS:ObjectName="Order Date"
-              DTS:DTSID="{5E799A8B-B1BF-4890-89EA-346034C546A7}"
+              DTS:DTSID="{37C6ADF1-94FD-4630-849D-268231D045BD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -211,7 +210,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Customer ID"
-              DTS:DTSID="{A7336D34-414C-4598-8924-E8375FDC9D41}"
+              DTS:DTSID="{EAE57E33-1554-4EFA-8D4F-99B99ECF9431}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -220,7 +219,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Region"
-              DTS:DTSID="{CA0967B1-B5C5-47A4-BEE1-CBFC4F31529F}"
+              DTS:DTSID="{0765B5AA-B5B4-4718-884B-8C887658603D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -229,34 +228,127 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Product ID"
-              DTS:DTSID="{044603E5-34AA-4591-826C-9AC527C1CD38}"
+              DTS:DTSID="{91CE8F9A-D5EB-4930-BFD0-5A80A0FE11F6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="2"
               DTS:TextQualified="True"
               DTS:ObjectName="Sales"
-              DTS:DTSID="{E7B288EE-C21F-4153-9AC7-CE4EAE3A95BE}"
+              DTS:DTSID="{42B9A86B-04E1-430C-8BC1-2A57CCF312B6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
+              DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="Quantity"
-              DTS:DTSID="{820264EA-58D9-4F24-AA27-DE014854873E}"
+              DTS:DTSID="{AA959A9C-F7A8-44FC-B8A8-D48F0797BD6C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Profit"
+              DTS:DTSID="{FBAE4DEE-C62A-4EC2-83C4-BD5C08153027}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Sales West]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{123C3DFD-D9E1-458C-A8F3-1154A69019B3}"
+      DTS:ObjectName="Sales West">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="D:\BI\Seminar\etl-flights\Seminar\Data\Sales_West.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
               DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
+              DTS:ObjectName="Order ID"
+              DTS:DTSID="{18327D97-2A48-431C-9A8D-98CF93BBC769}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Order Date"
+              DTS:DTSID="{CFC71017-2425-472E-A708-18612FC5E4D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Customer ID"
+              DTS:DTSID="{DE23519A-F696-4E74-A2B1-2A4F72852183}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Region"
+              DTS:DTSID="{05693FCC-C600-4930-9704-239146D42C2A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product ID"
+              DTS:DTSID="{7B09A380-7022-448F-BA6B-21C546F03EDD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sales"
+              DTS:DTSID="{10FF9242-073C-47AF-A5B7-4B50A417D986}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantity"
+              DTS:DTSID="{DD5CAD24-C3D7-4DED-B26B-9EAA8A13CD66}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="4"
+              DTS:TextQualified="True"
               DTS:ObjectName="Profit"
-              DTS:DTSID="{3BF82E7A-61E8-45C0-839B-F792E5C69FDE}"
+              DTS:DTSID="{0AB72BA8-C6CF-46E6-9E82-86DCE9752985}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -301,7 +393,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET to Customer"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -322,7 +414,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET to Product"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -339,16 +431,15 @@
       DTS:refId="Package\Get LSET to Sales"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{28dfb107-7e30-43e3-8fbc-cba5e8da6cc1}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET to Sales"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{DA380F2D-BF78-4E15-B9B8-EB97EC5148C4}"
+          SQLTask:Connection="{E28DB52E-7B5C-40F6-8B04-4F471B9317CB}"
           SQLTask:SqlStatementSource="SELECT LSET&#xA;FROM ETL_Load_Control&#xA;WHERE name = 'dbo.Sales_Combined_Stage';"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -2625,7 +2716,6 @@ WHERE
       DTS:refId="Package\Import Sales to Stage"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{00807102-89bc-4396-8d4a-29df7c36152d}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2653,12 +2743,22 @@ WHERE
                       refId="Package\Import Sales to Stage\Conditional Split.Inputs[Conditional Split Input].Columns[CreateDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreateDate"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[CreateDate]" />
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[CreateDate]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\Conditional Split.Inputs[Conditional Split Input].Columns[UpdateDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdateDate"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[UpdateDate]" />
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[UpdateDate]" />
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Conditional Split.Inputs[Conditional Split Input].Columns[LSET_Col]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LSET_Col"
+                      lineageId="Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Output].Columns[LSET_Col]" />
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Conditional Split.Inputs[Conditional Split Input].Columns[CET_Col]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CET_Col"
+                      lineageId="Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Output].Columns[CET_Col]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2678,13 +2778,13 @@ WHERE
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">(#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[CreateDate]} &gt; @[User::LSET] &amp;&amp; #{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[CreateDate]} &lt;= @[User::CET])</property>
+                      name="Expression">![ISNULL](#{Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[CreateDate]}) &amp;&amp; #{Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[CreateDate]} &gt; #{Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Output].Columns[LSET_Col]} &amp;&amp; #{Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[CreateDate]} &lt;= #{Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Output].Columns[CET_Col]}</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">(CreateDate &gt; @[User::LSET] &amp;&amp; CreateDate &lt;= @[User::CET])</property>
+                      name="FriendlyExpression">!ISNULL(CreateDate) &amp;&amp; CreateDate &gt; LSET_Col &amp;&amp; CreateDate &lt;= CET_Col</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -2706,13 +2806,13 @@ WHERE
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">(#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[UpdateDate]} &gt; @[User::LSET] &amp;&amp; #{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[UpdateDate]} &lt;= @[User::CET])</property>
+                      name="Expression">![ISNULL](#{Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[UpdateDate]}) &amp;&amp; #{Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[UpdateDate]} &gt; #{Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Output].Columns[LSET_Col]} &amp;&amp; #{Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[UpdateDate]} &lt;= #{Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Output].Columns[CET_Col]}</property>
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-                      name="FriendlyExpression">(UpdateDate &gt; @[User::LSET] &amp;&amp; UpdateDate &lt;= @[User::CET])</property>
+                      name="FriendlyExpression">!ISNULL(UpdateDate) &amp;&amp; UpdateDate &gt; LSET_Col &amp;&amp; UpdateDate &lt;= CET_Col</property>
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -2786,9 +2886,7 @@ WHERE
                       lineageId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Order ID]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Order Date]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="dbDate"
                       cachedName="Order Date"
                       lineageId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Order Date]" />
                     <inputColumn
@@ -2807,24 +2905,22 @@ WHERE
                       lineageId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Region]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Sales]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="numeric"
                       cachedName="Sales"
+                      cachedPrecision="18"
+                      cachedScale="2"
                       lineageId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Sales]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Quantity]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="Quantity"
                       lineageId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Quantity]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Profit]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="numeric"
                       cachedName="Profit"
+                      cachedPrecision="18"
+                      cachedScale="4"
                       lineageId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Profit]" />
                   </inputColumns>
                   <externalMetadataColumns />
@@ -2943,11 +3039,13 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Sales to Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Sales]"
-                      dataType="decimal"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Import Sales to Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Sales]"
                       name="Copy of Sales"
+                      precision="18"
+                      scale="2"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2963,7 +3061,7 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Sales to Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Quantity]"
-                      dataType="decimal"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Import Sales to Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Quantity]"
@@ -2983,11 +3081,13 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Sales to Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Profit]"
-                      dataType="decimal"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Import Sales to Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Profit]"
                       name="Copy of Profit"
+                      precision="18"
+                      scale="4"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -3056,9 +3156,7 @@ WHERE
                       lineageId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Order ID]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\Data Conversion 1.Inputs[Data Conversion Input].Columns[Order Date]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="dbDate"
                       cachedName="Order Date"
                       lineageId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Order Date]" />
                     <inputColumn
@@ -3077,24 +3175,22 @@ WHERE
                       lineageId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Region]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\Data Conversion 1.Inputs[Data Conversion Input].Columns[Sales]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="numeric"
                       cachedName="Sales"
+                      cachedPrecision="18"
+                      cachedScale="2"
                       lineageId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Sales]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\Data Conversion 1.Inputs[Data Conversion Input].Columns[Quantity]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="Quantity"
                       lineageId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Quantity]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\Data Conversion 1.Inputs[Data Conversion Input].Columns[Profit]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="numeric"
                       cachedName="Profit"
+                      cachedPrecision="18"
+                      cachedScale="4"
                       lineageId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Profit]" />
                   </inputColumns>
                   <externalMetadataColumns />
@@ -3213,11 +3309,13 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Sales to Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Sales]"
-                      dataType="decimal"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Import Sales to Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Sales]"
                       name="Copy of Sales"
+                      precision="18"
+                      scale="2"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -3233,7 +3331,7 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Sales to Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Quantity]"
-                      dataType="decimal"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Import Sales to Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Quantity]"
@@ -3253,11 +3351,13 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Sales to Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Profit]"
-                      dataType="decimal"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Import Sales to Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Profit]"
                       name="Copy of Profit"
+                      precision="18"
+                      scale="4"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -3334,13 +3434,13 @@ WHERE
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">([GETDATE]())</property>
+                          name="Expression">(DT_DBTIMESTAMP)[GETDATE]()</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(GETDATE())</property>
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)GETDATE()</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -3429,13 +3529,13 @@ WHERE
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">([GETDATE]())</property>
+                          name="Expression">(DT_DBTIMESTAMP)[GETDATE]()</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(GETDATE())</property>
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)GETDATE()</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -3489,6 +3589,101 @@ WHERE
               </outputs>
             </component>
             <component
+              refId="Package\Import Sales to Stage\Derived Column 2"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Sales to Stage\Derived Column 2.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import Sales to Stage\Derived Column 2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Output].Columns[LSET_Col]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Output].Columns[LSET_Col]"
+                      name="LSET_Col"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)@[User::LSET]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)@[User::LSET]</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Output].Columns[CET_Col]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Output].Columns[CET_Col]"
+                      name="CET_Col"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)@[User::CET]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)@[User::CET]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import Sales to Stage\Derived Column 2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Import Sales to Stage\OLE DB Command"
               componentClassID="Microsoft.OLEDBCommand"
               contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
@@ -3527,8 +3722,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Import Sales to Stage\OLE DB Command.Connections[OleDbConnection]"
-                  connectionManagerID="{E09FE498-C86B-48EA-8CA5-274F7DC5A2CE}:invalid"
-                  connectionManagerRefId="{E09FE498-C86B-48EA-8CA5-274F7DC5A2CE}:invalid"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-J2MIDQL\SQLEXPRESS.StagingDB_Seminar]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-J2MIDQL\SQLEXPRESS.StagingDB_Seminar]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3545,53 +3740,57 @@ WHERE
                       cachedDataType="dbDate"
                       cachedName="Copy of Order Date"
                       externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Order Date]" />
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Order Date]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of Customer ID]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Copy of Customer ID"
                       externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Customer ID]" />
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Customer ID]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of Product ID]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Copy of Product ID"
                       externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Product ID]" />
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Product ID]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of Sales]"
-                      cachedDataType="decimal"
+                      cachedDataType="numeric"
                       cachedName="Copy of Sales"
+                      cachedPrecision="18"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Sales]" />
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Sales]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of Quantity]"
-                      cachedDataType="decimal"
+                      cachedDataType="i4"
                       cachedName="Copy of Quantity"
                       externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Quantity]" />
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Quantity]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of Profit]"
-                      cachedDataType="decimal"
+                      cachedDataType="numeric"
                       cachedName="Copy of Profit"
+                      cachedPrecision="18"
+                      cachedScale="4"
                       externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Profit]" />
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Profit]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\OLE DB Command.Inputs[OLE DB Command Input].Columns[SourceID]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="SourceID"
                       externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[SourceID]" />
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[SourceID]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of Order ID]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Copy of Order ID"
                       externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Order ID]" />
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Order ID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3784,8 +3983,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Import Sales to Stage\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="{E09FE498-C86B-48EA-8CA5-274F7DC5A2CE}:invalid"
-                  connectionManagerRefId="{E09FE498-C86B-48EA-8CA5-274F7DC5A2CE}:invalid"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-J2MIDQL\SQLEXPRESS.StagingDB_Seminar]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-J2MIDQL\SQLEXPRESS.StagingDB_Seminar]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3798,85 +3997,76 @@ WHERE
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpdateDate]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="UpdateDate"
-                      externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdateDate]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[UpdateDate]" />
-                    <inputColumn
                       refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreateDate]"
                       cachedDataType="dbTimeStamp"
                       cachedName="CreateDate"
                       externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreateDate]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[CreateDate]" />
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[CreateDate]" />
                     <inputColumn
-                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Product ID]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Product ID"
-                      externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Product ID]" />
-                    <inputColumn
-                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Order ID]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Order ID"
-                      externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Order ID]" />
-                    <inputColumn
-                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Order Date]"
-                      cachedDataType="dbDate"
-                      cachedName="Copy of Order Date"
-                      externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Order Date]" />
-                    <inputColumn
-                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Customer ID]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Copy of Customer ID"
-                      externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Customer ID]" />
-                    <inputColumn
-                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Sales]"
-                      cachedDataType="decimal"
-                      cachedName="Copy of Sales"
-                      externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sales]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Sales]" />
-                    <inputColumn
-                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Quantity]"
-                      cachedDataType="decimal"
-                      cachedName="Copy of Quantity"
-                      externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Quantity]" />
-                    <inputColumn
-                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Profit]"
-                      cachedDataType="decimal"
-                      cachedName="Copy of Profit"
-                      externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Profit]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Profit]" />
+                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpdateDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdateDate"
+                      externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdateDate]"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[UpdateDate]" />
                     <inputColumn
                       refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SourceID]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="SourceID"
                       externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SourceID]"
-                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[SourceID]" />
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[SourceID]" />
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Order ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Order ID"
+                      externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Order ID]" />
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Order Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Copy of Order Date"
+                      externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderDate]"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Order Date]" />
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Customer ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Customer ID"
+                      externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Customer ID]" />
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Product ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Product ID"
+                      externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Product ID]" />
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Sales]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Sales"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sales]"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Sales]" />
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Quantity]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Quantity"
+                      externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Quantity]" />
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Profit]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Profit"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Profit]"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Profit]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreateDate]"
-                      dataType="dbTimeStamp"
-                      name="CreateDate" />
-                    <externalMetadataColumn
-                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdateDate]"
-                      dataType="dbTimeStamp"
-                      name="UpdateDate" />
-                    <externalMetadataColumn
-                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
-                      dataType="wstr"
-                      length="50"
-                      name="ProductID" />
                     <externalMetadataColumn
                       refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
                       dataType="wstr"
@@ -3891,6 +4081,11 @@ WHERE
                       dataType="wstr"
                       length="50"
                       name="CustomerID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      dataType="wstr"
+                      length="50"
+                      name="ProductID" />
                     <externalMetadataColumn
                       refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sales]"
                       dataType="numeric"
@@ -3909,8 +4104,17 @@ WHERE
                       scale="4" />
                     <externalMetadataColumn
                       refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SourceID]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       name="SourceID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreateDate]"
+                      dataType="dbTimeStamp"
+                      name="CreateDate" />
+                    <externalMetadataColumn
+                      refId="Package\Import Sales to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdateDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdateDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4016,12 +4220,10 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Order Date]"
-                      codePage="65001"
-                      dataType="str"
+                      dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].ExternalColumns[Order Date]"
-                      length="50"
                       lineageId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Order Date]"
                       name="Order Date"
                       truncationRowDisposition="FailComponent">
@@ -4082,14 +4284,14 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Sales]"
-                      codePage="65001"
-                      dataType="str"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].ExternalColumns[Sales]"
-                      length="50"
                       lineageId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Sales]"
                       name="Sales"
+                      precision="18"
+                      scale="2"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -4104,12 +4306,10 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Quantity]"
-                      codePage="65001"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].ExternalColumns[Quantity]"
-                      length="50"
                       lineageId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Quantity]"
                       name="Quantity"
                       truncationRowDisposition="FailComponent">
@@ -4126,14 +4326,14 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Profit]"
-                      codePage="65001"
-                      dataType="str"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].ExternalColumns[Profit]"
-                      length="50"
                       lineageId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Profit]"
                       name="Profit"
+                      precision="18"
+                      scale="4"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -4163,9 +4363,7 @@ WHERE
                       name="Order ID" />
                     <externalMetadataColumn
                       refId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].ExternalColumns[Order Date]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
+                      dataType="dbDate"
                       name="Order Date" />
                     <externalMetadataColumn
                       refId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].ExternalColumns[Customer ID]"
@@ -4181,22 +4379,20 @@ WHERE
                       name="Region" />
                     <externalMetadataColumn
                       refId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].ExternalColumns[Sales]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
-                      name="Sales" />
+                      dataType="numeric"
+                      name="Sales"
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].ExternalColumns[Quantity]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Quantity" />
                     <externalMetadataColumn
                       refId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].ExternalColumns[Profit]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
-                      name="Profit" />
+                      dataType="numeric"
+                      name="Profit"
+                      precision="18"
+                      scale="4" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -4250,8 +4446,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Import Sales to Stage\Sales West Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Sales South]"
-                  connectionManagerRefId="Package.ConnectionManagers[Sales South]"
+                  connectionManagerID="Package.ConnectionManagers[Sales West]"
+                  connectionManagerRefId="Package.ConnectionManagers[Sales West]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -4305,12 +4501,10 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Order Date]"
-                      codePage="65001"
-                      dataType="str"
+                      dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].ExternalColumns[Order Date]"
-                      length="50"
                       lineageId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Order Date]"
                       name="Order Date"
                       truncationRowDisposition="FailComponent">
@@ -4371,14 +4565,14 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Sales]"
-                      codePage="65001"
-                      dataType="str"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].ExternalColumns[Sales]"
-                      length="50"
                       lineageId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Sales]"
                       name="Sales"
+                      precision="18"
+                      scale="2"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -4393,12 +4587,10 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Quantity]"
-                      codePage="65001"
-                      dataType="str"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].ExternalColumns[Quantity]"
-                      length="50"
                       lineageId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Quantity]"
                       name="Quantity"
                       truncationRowDisposition="FailComponent">
@@ -4415,14 +4607,14 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Profit]"
-                      codePage="65001"
-                      dataType="str"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].ExternalColumns[Profit]"
-                      length="50"
                       lineageId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Profit]"
                       name="Profit"
+                      precision="18"
+                      scale="4"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -4452,9 +4644,7 @@ WHERE
                       name="Order ID" />
                     <externalMetadataColumn
                       refId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].ExternalColumns[Order Date]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
+                      dataType="dbDate"
                       name="Order Date" />
                     <externalMetadataColumn
                       refId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].ExternalColumns[Customer ID]"
@@ -4470,22 +4660,20 @@ WHERE
                       name="Region" />
                     <externalMetadataColumn
                       refId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].ExternalColumns[Sales]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
-                      name="Sales" />
+                      dataType="numeric"
+                      name="Sales"
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].ExternalColumns[Quantity]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       name="Quantity" />
                     <externalMetadataColumn
                       refId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].ExternalColumns[Profit]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
-                      name="Profit" />
+                      dataType="numeric"
+                      name="Profit"
+                      precision="18"
+                      scale="4" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -4512,6 +4700,607 @@ WHERE
                       lineageId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Sales to Stage\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[Product ID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Product ID"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Product ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[Order ID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Order ID"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Order ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[Order Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Order Date"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Order Date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[Customer ID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Customer ID"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Customer ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[Region]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Region"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Region]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[Sales]"
+                      cachedDataType="numeric"
+                      cachedName="Sales"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Sales]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[Quantity]"
+                      cachedDataType="i4"
+                      cachedName="Quantity"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Quantity]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[Profit]"
+                      cachedDataType="numeric"
+                      cachedName="Profit"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Profit]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[CreateDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreateDate"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[CreateDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[UpdateDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdateDate"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[UpdateDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[Copy of Product ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Product ID"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Product ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[Copy of Order ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Order ID"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Order ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[Copy of Order Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Copy of Order Date"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Order Date]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[Copy of Customer ID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Customer ID"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Customer ID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[SourceID]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="SourceID"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[SourceID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[Copy of Sales]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Sales"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Sales]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[Copy of Quantity]"
+                      cachedDataType="i4"
+                      cachedName="Copy of Quantity"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Quantity]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import Sales to Stage\Sort.Inputs[Sort Input].Columns[Copy of Profit]"
+                      cachedDataType="numeric"
+                      cachedName="Copy of Profit"
+                      cachedPrecision="18"
+                      cachedScale="4"
+                      lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Profit]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Product ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Product ID]"
+                      name="Product ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Product ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Order ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Order ID]"
+                      name="Order ID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Order ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Order Date]"
+                      dataType="dbDate"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Order Date]"
+                      name="Order Date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Order Date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Customer ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Customer ID]"
+                      name="Customer ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Customer ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Region]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Region]"
+                      name="Region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Sales]"
+                      dataType="numeric"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Sales]"
+                      name="Sales"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Sales]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Quantity]"
+                      dataType="i4"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Quantity]"
+                      name="Quantity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Quantity]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Profit]"
+                      dataType="numeric"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Profit]"
+                      name="Profit"
+                      precision="18"
+                      scale="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Profit]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[CreateDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[CreateDate]"
+                      name="CreateDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[CreateDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[UpdateDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[UpdateDate]"
+                      name="UpdateDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[UpdateDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Product ID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Product ID]"
+                      name="Copy of Product ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Product ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Order ID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Order ID]"
+                      name="Copy of Order ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Order ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Order Date]"
+                      dataType="dbDate"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Order Date]"
+                      name="Copy of Order Date">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Order Date]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Customer ID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Customer ID]"
+                      name="Copy of Customer ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Customer ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[SourceID]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[SourceID]"
+                      name="SourceID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[SourceID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Sales]"
+                      dataType="numeric"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Sales]"
+                      name="Copy of Sales"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Sales]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Quantity]"
+                      dataType="i4"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Quantity]"
+                      name="Copy of Quantity">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Quantity]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Profit]"
+                      dataType="numeric"
+                      lineageId="Package\Import Sales to Stage\Sort.Outputs[Sort Output].Columns[Copy of Profit]"
+                      name="Copy of Profit"
+                      precision="18"
+                      scale="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Profit]}</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -4561,9 +5350,7 @@ WHERE
                     </inputColumn>
                     <inputColumn
                       refId="Package\Import Sales to Stage\Union All.Inputs[Union All Input 1].Columns[Order Date]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="dbDate"
                       cachedName="Order Date"
                       lineageId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Order Date]">
                       <properties>
@@ -4606,10 +5393,10 @@ WHERE
                     </inputColumn>
                     <inputColumn
                       refId="Package\Import Sales to Stage\Union All.Inputs[Union All Input 1].Columns[Sales]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="numeric"
                       cachedName="Sales"
+                      cachedPrecision="18"
+                      cachedScale="2"
                       lineageId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Sales]">
                       <properties>
                         <property
@@ -4621,9 +5408,7 @@ WHERE
                     </inputColumn>
                     <inputColumn
                       refId="Package\Import Sales to Stage\Union All.Inputs[Union All Input 1].Columns[Quantity]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="Quantity"
                       lineageId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Quantity]">
                       <properties>
@@ -4636,10 +5421,10 @@ WHERE
                     </inputColumn>
                     <inputColumn
                       refId="Package\Import Sales to Stage\Union All.Inputs[Union All Input 1].Columns[Profit]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="numeric"
                       cachedName="Profit"
+                      cachedPrecision="18"
+                      cachedScale="4"
                       lineageId="Package\Import Sales to Stage\Sales South Source.Outputs[Flat File Source Output].Columns[Profit]">
                       <properties>
                         <property
@@ -4746,8 +5531,10 @@ WHERE
                     </inputColumn>
                     <inputColumn
                       refId="Package\Import Sales to Stage\Union All.Inputs[Union All Input 1].Columns[Copy of Sales]"
-                      cachedDataType="decimal"
+                      cachedDataType="numeric"
                       cachedName="Copy of Sales"
+                      cachedPrecision="18"
+                      cachedScale="2"
                       lineageId="Package\Import Sales to Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Sales]">
                       <properties>
                         <property
@@ -4759,7 +5546,7 @@ WHERE
                     </inputColumn>
                     <inputColumn
                       refId="Package\Import Sales to Stage\Union All.Inputs[Union All Input 1].Columns[Copy of Quantity]"
-                      cachedDataType="decimal"
+                      cachedDataType="i4"
                       cachedName="Copy of Quantity"
                       lineageId="Package\Import Sales to Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Quantity]">
                       <properties>
@@ -4772,8 +5559,10 @@ WHERE
                     </inputColumn>
                     <inputColumn
                       refId="Package\Import Sales to Stage\Union All.Inputs[Union All Input 1].Columns[Copy of Profit]"
-                      cachedDataType="decimal"
+                      cachedDataType="numeric"
                       cachedName="Copy of Profit"
+                      cachedPrecision="18"
+                      cachedScale="4"
                       lineageId="Package\Import Sales to Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Profit]">
                       <properties>
                         <property
@@ -4823,9 +5612,7 @@ WHERE
                     </inputColumn>
                     <inputColumn
                       refId="Package\Import Sales to Stage\Union All.Inputs[Union All Input 2].Columns[Order Date]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="dbDate"
                       cachedName="Order Date"
                       lineageId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Order Date]">
                       <properties>
@@ -4868,10 +5655,10 @@ WHERE
                     </inputColumn>
                     <inputColumn
                       refId="Package\Import Sales to Stage\Union All.Inputs[Union All Input 2].Columns[Sales]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="numeric"
                       cachedName="Sales"
+                      cachedPrecision="18"
+                      cachedScale="2"
                       lineageId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Sales]">
                       <properties>
                         <property
@@ -4883,9 +5670,7 @@ WHERE
                     </inputColumn>
                     <inputColumn
                       refId="Package\Import Sales to Stage\Union All.Inputs[Union All Input 2].Columns[Quantity]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="i4"
                       cachedName="Quantity"
                       lineageId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Quantity]">
                       <properties>
@@ -4898,10 +5683,10 @@ WHERE
                     </inputColumn>
                     <inputColumn
                       refId="Package\Import Sales to Stage\Union All.Inputs[Union All Input 2].Columns[Profit]"
-                      cachedCodepage="65001"
-                      cachedDataType="str"
-                      cachedLength="50"
+                      cachedDataType="numeric"
                       cachedName="Profit"
+                      cachedPrecision="18"
+                      cachedScale="4"
                       lineageId="Package\Import Sales to Stage\Sales West Source.Outputs[Flat File Source Output].Columns[Profit]">
                       <properties>
                         <property
@@ -5008,8 +5793,10 @@ WHERE
                     </inputColumn>
                     <inputColumn
                       refId="Package\Import Sales to Stage\Union All.Inputs[Union All Input 2].Columns[Copy of Sales]"
-                      cachedDataType="decimal"
+                      cachedDataType="numeric"
                       cachedName="Copy of Sales"
+                      cachedPrecision="18"
+                      cachedScale="2"
                       lineageId="Package\Import Sales to Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Sales]">
                       <properties>
                         <property
@@ -5021,7 +5808,7 @@ WHERE
                     </inputColumn>
                     <inputColumn
                       refId="Package\Import Sales to Stage\Union All.Inputs[Union All Input 2].Columns[Copy of Quantity]"
-                      cachedDataType="decimal"
+                      cachedDataType="i4"
                       cachedName="Copy of Quantity"
                       lineageId="Package\Import Sales to Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Quantity]">
                       <properties>
@@ -5034,8 +5821,10 @@ WHERE
                     </inputColumn>
                     <inputColumn
                       refId="Package\Import Sales to Stage\Union All.Inputs[Union All Input 2].Columns[Copy of Profit]"
-                      cachedDataType="decimal"
+                      cachedDataType="numeric"
                       cachedName="Copy of Profit"
+                      cachedPrecision="18"
+                      cachedScale="4"
                       lineageId="Package\Import Sales to Stage\Data Conversion 1.Outputs[Data Conversion Output].Columns[Copy of Profit]">
                       <properties>
                         <property
@@ -5077,9 +5866,7 @@ WHERE
                       name="Order ID" />
                     <outputColumn
                       refId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Order Date]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
+                      dataType="dbDate"
                       lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Order Date]"
                       name="Order Date" />
                     <outputColumn
@@ -5098,25 +5885,23 @@ WHERE
                       name="Region" />
                     <outputColumn
                       refId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Sales]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
+                      dataType="numeric"
                       lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Sales]"
-                      name="Sales" />
+                      name="Sales"
+                      precision="18"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Quantity]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
+                      dataType="i4"
                       lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Quantity]"
                       name="Quantity" />
                     <outputColumn
                       refId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Profit]"
-                      codePage="65001"
-                      dataType="str"
-                      length="50"
+                      dataType="numeric"
                       lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Profit]"
-                      name="Profit" />
+                      name="Profit"
+                      precision="18"
+                      scale="4" />
                     <outputColumn
                       refId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[CreateDate]"
                       dataType="dbTimeStamp"
@@ -5158,19 +5943,23 @@ WHERE
                       name="SourceID" />
                     <outputColumn
                       refId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Sales]"
-                      dataType="decimal"
+                      dataType="numeric"
                       lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Sales]"
-                      name="Copy of Sales" />
+                      name="Copy of Sales"
+                      precision="18"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Quantity]"
-                      dataType="decimal"
+                      dataType="i4"
                       lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Quantity]"
                       name="Copy of Quantity" />
                     <outputColumn
                       refId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Profit]"
-                      dataType="decimal"
+                      dataType="numeric"
                       lineageId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1].Columns[Copy of Profit]"
-                      name="Copy of Profit" />
+                      name="Copy of Profit"
+                      precision="18"
+                      scale="4" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -5199,6 +5988,11 @@ WHERE
               name="Derived Column Output"
               startId="Package\Import Sales to Stage\Derived Column 1.Outputs[Derived Column Output]" />
             <path
+              refId="Package\Import Sales to Stage.Paths[Derived Column Output2]"
+              endId="Package\Import Sales to Stage\Conditional Split.Inputs[Conditional Split Input]"
+              name="Derived Column Output"
+              startId="Package\Import Sales to Stage\Derived Column 2.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Import Sales to Stage.Paths[Flat File Source Output]"
               endId="Package\Import Sales to Stage\Derived Column.Inputs[Derived Column Input]"
               name="Flat File Source Output"
@@ -5214,8 +6008,13 @@ WHERE
               name="NewRows"
               startId="Package\Import Sales to Stage\Conditional Split.Outputs[NewRows]" />
             <path
+              refId="Package\Import Sales to Stage.Paths[Sort Output]"
+              endId="Package\Import Sales to Stage\Derived Column 2.Inputs[Derived Column Input]"
+              name="Sort Output"
+              startId="Package\Import Sales to Stage\Sort.Outputs[Sort Output]" />
+            <path
               refId="Package\Import Sales to Stage.Paths[Union All Output 1]"
-              endId="Package\Import Sales to Stage\Conditional Split.Inputs[Conditional Split Input]"
+              endId="Package\Import Sales to Stage\Sort.Inputs[Sort Input]"
               name="Union All Output 1"
               startId="Package\Import Sales to Stage\Union All.Outputs[Union All Output 1]" />
             <path
@@ -5235,7 +6034,7 @@ WHERE
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET Customer to metadata"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5256,7 +6055,7 @@ WHERE
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET Product to metadata"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5273,20 +6072,19 @@ WHERE
       DTS:refId="Package\Set CET Sales to metadata"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{e76ed6b8-bb3c-4a41-a846-a42c794c3d5e}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET Sales to metadata"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{DA380F2D-BF78-4E15-B9B8-EB97EC5148C4}"
-          SQLTask:SqlStatementSource="SELECT GETDATE() AS Current_CET"
+          SQLTask:Connection="{E28DB52E-7B5C-40F6-8B04-4F471B9317CB}"
+          SQLTask:SqlStatementSource="SELECT GETDATE() AS CET"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
-            SQLTask:ResultName="0"
+            SQLTask:ResultName="CET"
             SQLTask:DtsVariableName="User::CET" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
@@ -5299,7 +6097,7 @@ WHERE
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LCET to Customer"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5322,7 +6120,7 @@ WHERE
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LCET to Product"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5341,17 +6139,16 @@ WHERE
       DTS:refId="Package\Update LCET to Sales"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{67ca60c8-6cdb-485e-ba4b-e42b2ff6f1cd}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LCET to Sales"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{DA380F2D-BF78-4E15-B9B8-EB97EC5148C4}"
-          SQLTask:SqlStatementSource="UPDATE ETL_Load_Control&#xA;SET LSET = CET&#xA;WHERE name = 'dbo.Sales_Combined_Stage';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:Connection="{E28DB52E-7B5C-40F6-8B04-4F471B9317CB}"
+          SQLTask:SqlStatementSource="UPDATE ETL_Load_Control&#xA;SET LSET = ?&#xA;WHERE name = 'dbo.Sales_Combined_Stage';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::CET"
@@ -5552,11 +6349,11 @@ WHERE
         <NodeLayout
           Size="162,42"
           Id="Package\Get LSET to Sales"
-          TopLeft="33.5,97.5" />
+          TopLeft="28.5,98.5" />
         <NodeLayout
           Size="181,42"
           Id="Package\Import Sales to Stage"
-          TopLeft="24.5,187.5" />
+          TopLeft="24.5,186.5" />
         <NodeLayout
           Size="204,42"
           Id="Package\Set CET Sales to metadata"
@@ -5567,30 +6364,18 @@ WHERE
           TopLeft="22.5,285.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3 1]"
-          TopLeft="106.5,48.5">
+          TopLeft="108,48.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8,49"
+              EndConnector="0,50"
               Start="0,0"
-              End="8,41.5">
+              End="0,42.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.5"
-                    Point2="0,24.5"
-                    Point3="4,24.5" />
-                  <mssgle:LineSegment
-                    End="4,24.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4,24.5"
-                    Point2="8,24.5"
-                    Point3="8,28.5" />
-                  <mssgle:LineSegment
-                    End="8,41.5" />
+                    End="0,42.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5601,18 +6386,18 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1 1 1]"
-          TopLeft="114.75,139.5">
+          TopLeft="112.25,140.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48"
+              EndConnector="0,46"
               Start="0,0"
-              End="0,40.5">
+              End="0,38.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.5" />
+                    End="0,38.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5623,18 +6408,18 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2 1 1]"
-          TopLeft="113.75,229.5">
+          TopLeft="113.75,228.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56"
+              EndConnector="0,57"
               Start="0,0"
-              End="0,48.5">
+              End="0,49.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.5" />
+                    End="0,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5772,6 +6557,14 @@ WHERE
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="163,42"
+          Id="Package\Import Customer to Stage\Derived Column 1"
+          TopLeft="118,312" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Import Customer to Stage\OLE DB Destination"
+          TopLeft="84,533" />
+        <NodeLayout
           Size="151,42"
           Id="Package\Import Customer to Stage\Flat File Source"
           TopLeft="119,52" />
@@ -5780,25 +6573,41 @@ WHERE
           Id="Package\Import Customer to Stage\OLE DB Command"
           TopLeft="343,536" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\Import Customer to Stage\Derived Column 1"
-          TopLeft="118,312" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Import Customer to Stage\Derived Column"
-          TopLeft="118,140" />
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Import Customer to Stage\OLE DB Destination"
-          TopLeft="84,533" />
+          Size="156,42"
+          Id="Package\Import Customer to Stage\Data Conversion"
+          TopLeft="117,221" />
         <NodeLayout
           Size="155,42"
           Id="Package\Import Customer to Stage\Conditional Split"
           TopLeft="119,399" />
         <NodeLayout
-          Size="156,42"
-          Id="Package\Import Customer to Stage\Data Conversion"
-          TopLeft="117,221" />
+          Size="154,42"
+          Id="Package\Import Customer to Stage\Derived Column"
+          TopLeft="118,140" />
+        <EdgeLayout
+          Id="Package\Import Customer to Stage.Paths[Data Conversion Output]"
+          TopLeft="197.25,263">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Customer to Stage.Paths[UpdateRows]"
           TopLeft="221,441">
@@ -5878,51 +6687,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Customer to Stage.Paths[Derived Column Output]"
-          TopLeft="195,182">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39"
-              Start="0,0"
-              End="0,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Customer to Stage.Paths[Data Conversion Output]"
-          TopLeft="197.25,263">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,49"
-              Start="0,0"
-              End="0,41.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5944,7 +6711,33 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Customer to Stage.Paths[Derived Column Output]"
+          TopLeft="195,182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5969,25 +6762,33 @@ WHERE
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="151,42"
+          Id="Package\Import Product to Stage\Flat File Source"
+          TopLeft="120,52" />
+        <NodeLayout
           Size="171,42"
           Id="Package\Import Product to Stage\OLE DB Destination"
           TopLeft="78,554" />
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Import Product to Stage\OLE DB Command"
-          TopLeft="337,557" />
         <NodeLayout
           Size="154,42"
           Id="Package\Import Product to Stage\Derived Column"
           TopLeft="117,139" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\Import Product to Stage\Conditional Split"
-          TopLeft="113,420" />
+          Size="163,42"
+          Id="Package\Import Product to Stage\Derived Column 1"
+          TopLeft="110,317" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Import Product to Stage\OLE DB Command"
+          TopLeft="337,557" />
         <NodeLayout
           Size="156,42"
           Id="Package\Import Product to Stage\Data Conversion"
           TopLeft="116,224" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Import Product to Stage\Conditional Split"
+          TopLeft="113,420" />
         <EdgeLayout
           Id="Package\Import Product to Stage.Paths[UpdateRows]"
           TopLeft="215,462">
@@ -6049,45 +6850,19 @@ WHERE
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Product to Stage.Paths[Derived Column Output]"
-          TopLeft="194,181">
+          Id="Package\Import Product to Stage.Paths[Flat File Source Output]"
+          TopLeft="194.75,94">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43"
+              EndConnector="0,45"
               Start="0,0"
-              End="0,35.5">
+              End="0,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Import Product to Stage\Derived Column 1"
-          TopLeft="110,317" />
-        <EdgeLayout
-          Id="Package\Import Product to Stage.Paths[Data Conversion Output]"
-          TopLeft="192.75,266">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51"
-              Start="0,0"
-              End="0,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.5" />
+                    End="0,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6118,24 +6893,42 @@ WHERE
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Import Product to Stage\Flat File Source"
-          TopLeft="120,52" />
         <EdgeLayout
-          Id="Package\Import Product to Stage.Paths[Flat File Source Output]"
-          TopLeft="194.75,94">
+          Id="Package\Import Product to Stage.Paths[Derived Column Output]"
+          TopLeft="194,181">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,45"
+              EndConnector="0,43"
               Start="0,0"
-              End="0,37.5">
+              End="0,35.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.5" />
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Product to Stage.Paths[Data Conversion Output]"
+          TopLeft="192.75,266">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6166,9 +6959,13 @@ WHERE
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="171,42"
-          Id="Package\Import Sales to Stage\OLE DB Destination"
-          TopLeft="102,515" />
+          Size="163,42"
+          Id="Package\Import Sales to Stage\Derived Column 2"
+          TopLeft="228.166666666667,481.621212121213" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Import Sales to Stage\OLE DB Command"
+          TopLeft="375.909090909091,679.454545454546" />
         <NodeLayout
           Size="154,42"
           Id="Package\Import Sales to Stage\Derived Column"
@@ -6186,58 +6983,50 @@ WHERE
           Id="Package\Import Sales to Stage\Derived Column 1"
           TopLeft="356,133" />
         <NodeLayout
-          Size="121,42"
-          Id="Package\Import Sales to Stage\Union All"
-          TopLeft="245,318" />
-        <NodeLayout
-          Size="169,42"
-          Id="Package\Import Sales to Stage\Sales South Source"
-          TopLeft="108,52" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Import Sales to Stage\Conditional Split"
-          TopLeft="227,415" />
-        <NodeLayout
           Size="156,42"
           Id="Package\Import Sales to Stage\Data Conversion"
           TopLeft="116,224" />
         <NodeLayout
-          Size="166,42"
-          Id="Package\Import Sales to Stage\OLE DB Command"
-          TopLeft="365,519" />
+          Size="155,42"
+          Id="Package\Import Sales to Stage\Conditional Split"
+          TopLeft="227.075757575758,575.454545454546" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Import Sales to Stage\Sales South Source"
+          TopLeft="108,52" />
         <EdgeLayout
-          Id="Package\Import Sales to Stage.Paths[NewRows]"
-          TopLeft="280,457">
+          Id="Package\Import Sales to Stage.Paths[UpdateRows]"
+          TopLeft="329.075757575758,617.454545454546">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-92.5,58"
+              EndConnector="129.833333333333,62"
               Start="0,0"
-              End="-92.5,50.5">
+              End="129.833333333333,54.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5555555555556" />
+                    End="0,21.1800766283525" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.5555555555556"
-                    Point2="0,23.5555555555556"
-                    Point3="-4,23.5555555555556" />
+                    Point1="0,21.1800766283525"
+                    Point2="0,25.1800766283525"
+                    Point3="4,25.1800766283525" />
                   <mssgle:LineSegment
-                    End="-88.5,23.5555555555556" />
+                    End="125.833333333333,25.1800766283525" />
                   <mssgle:CubicBezierSegment
-                    Point1="-88.5,23.5555555555556"
-                    Point2="-92.5,23.5555555555556"
-                    Point3="-92.5,27.5555555555556" />
+                    Point1="125.833333333333,25.1800766283525"
+                    Point2="129.833333333333,25.1800766283525"
+                    Point3="129.833333333333,29.1800766283525" />
                   <mssgle:LineSegment
-                    End="-92.5,50.5" />
+                    End="129.833333333333,54.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-68.222578125,28.5555555555556,43.94515625,9.421875"
+              BoundingBox="36.8401432291665,30.1800766283525,56.153046875,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6260,9 +7049,7 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6284,9 +7071,29 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales to Stage.Paths[Derived Column Output2]"
+          TopLeft="307.121212121212,523.621212121212">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.8333333333331"
+              Start="0,0"
+              End="0,44.3333333333331">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.3333333333331" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6308,9 +7115,7 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6332,9 +7137,71 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Import Sales to Stage\Sort"
+          TopLeft="263.216783216783,387.272727272727" />
+        <EdgeLayout
+          Id="Package\Import Sales to Stage.Paths[Sort Output]"
+          TopLeft="310.941724941725,429.272727272727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.3484848484853"
+              Start="0,0"
+              End="0,44.8484848484853">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.8484848484853" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Import Sales to Stage\Union All"
+          TopLeft="247.412587412587,305.034965034965" />
+        <EdgeLayout
+          Id="Package\Import Sales to Stage.Paths[Data Conversion Output]"
+          TopLeft="194,266">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="95.079254079254,39.0349650349651"
+              Start="0,0"
+              End="95.079254079254,31.5349650349651">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.115321872255" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.115321872255"
+                    Point2="0,23.115321872255"
+                    Point3="4,23.115321872255" />
+                  <mssgle:LineSegment
+                    End="91.079254079254,23.115321872255" />
+                  <mssgle:CubicBezierSegment
+                    Point1="91.079254079254,23.115321872255"
+                    Point2="95.079254079254,23.115321872255"
+                    Point3="95.079254079254,27.115321872255" />
+                  <mssgle:LineSegment
+                    End="95.079254079254,31.5349650349651" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6343,129 +7210,93 @@ WHERE
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-115.166666666667,55"
+              EndConnector="-112.754079254079,42.0349650349651"
               Start="0,0"
-              End="-115.166666666667,47.5">
+              End="-112.754079254079,34.5349650349651">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.5693311582382" />
+                    End="0,20.8918308445225" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.5693311582382"
-                    Point2="0,32.5693311582382"
-                    Point3="-4,32.5693311582382" />
+                    Point1="0,20.8918308445225"
+                    Point2="0,24.8918308445225"
+                    Point3="-4,24.8918308445225" />
                   <mssgle:LineSegment
-                    End="-111.166666666667,32.5693311582382" />
+                    End="-108.754079254079,24.8918308445225" />
                   <mssgle:CubicBezierSegment
-                    Point1="-111.166666666667,32.5693311582382"
-                    Point2="-115.166666666667,32.5693311582382"
-                    Point3="-115.166666666667,36.5693311582382" />
+                    Point1="-108.754079254079,24.8918308445225"
+                    Point2="-112.754079254079,24.8918308445225"
+                    Point3="-112.754079254079,28.8918308445225" />
                   <mssgle:LineSegment
-                    End="-115.166666666667,47.5" />
+                    End="-112.754079254079,34.5349650349651" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Sales to Stage.Paths[Data Conversion Output]"
-          TopLeft="194,266">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="111.5,52"
-              Start="0,0"
-              End="111.5,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22"
-                    Point2="0,26"
-                    Point3="4,26" />
-                  <mssgle:LineSegment
-                    End="107.5,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="107.5,26"
-                    Point2="111.5,26"
-                    Point3="111.5,30" />
-                  <mssgle:LineSegment
-                    End="111.5,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Sales to Stage.Paths[UpdateRows]"
-          TopLeft="329,457">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="119,62"
-              Start="0,0"
-              End="119,54.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.1800766283525" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.1800766283525"
-                    Point2="0,25.1800766283525"
-                    Point3="4,25.1800766283525" />
-                  <mssgle:LineSegment
-                    End="115,25.1800766283525" />
-                  <mssgle:CubicBezierSegment
-                    Point1="115,25.1800766283525"
-                    Point2="119,25.1800766283525"
-                    Point3="119,29.1800766283525" />
-                  <mssgle:LineSegment
-                    End="119,54.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="31.4234765625,30.1800766283525,56.153046875,11.609375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Sales to Stage.Paths[Union All Output 1]"
-          TopLeft="305,360">
+          TopLeft="310.064685314685,347.034965034965">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,55"
+              EndConnector="0,40.2377622377621"
               Start="0,0"
-              End="0,47.5">
+              End="0,32.7377622377621">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.5" />
+                    End="0,32.7377622377621" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Import Sales to Stage\OLE DB Destination"
+          TopLeft="91.8181818181818,670" />
+        <EdgeLayout
+          Id="Package\Import Sales to Stage.Paths[NewRows]"
+          TopLeft="280.075757575758,617.454545454546">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-102.757575757576,52.5454545454543"
+              Start="0,0"
+              End="-102.757575757576,45.0454545454543">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.340299547196" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.340299547196"
+                    Point2="0,21.340299547196"
+                    Point3="-4,21.340299547196" />
+                  <mssgle:LineSegment
+                    End="-98.7575757575761,21.340299547196" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-98.7575757575761,21.340299547196"
+                    Point2="-102.757575757576,21.340299547196"
+                    Point3="-102.757575757576,25.340299547196" />
+                  <mssgle:LineSegment
+                    End="-102.757575757576,45.0454545454543" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-73.351366003788,26.340299547196,43.94515625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

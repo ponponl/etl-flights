@@ -2,13 +2,13 @@
 <BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <ProjectInfo>
     <Name>Seminar</Name>
-    <LastWriteTime>2025-11-21T21:20:34.3288496Z</LastWriteTime>
+    <LastWriteTime>2025-11-23T13:18:08.2764614Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
-      <Name>Package.dtsx</Name>
-      <LastWriteTime>2025-11-22T07:47:20.1613787Z</LastWriteTime>
+      <Name>Source to Stage.dtsx</Name>
+      <LastWriteTime>2025-11-23T13:40:15.8947233Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
