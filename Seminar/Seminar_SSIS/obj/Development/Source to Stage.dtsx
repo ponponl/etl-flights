@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Source to Stage"
   DTS:PackageType="5"
-  DTS:VersionBuild="207"
-  DTS:VersionGUID="{30DF1D74-C652-468F-87BF-AA7FE99F2E6B}">
+  DTS:VersionBuild="222"
+  DTS:VersionGUID="{C2826313-7084-42DE-AFF9-E27502D827AC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -393,7 +393,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET to Customer"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -414,7 +414,7 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET to Product"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -435,12 +435,12 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET to Sales"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{E28DB52E-7B5C-40F6-8B04-4F471B9317CB}"
-          SQLTask:SqlStatementSource="SELECT LSET&#xA;FROM ETL_Load_Control&#xA;WHERE name = 'dbo.Sales_Combined_Stage';"
+          SQLTask:SqlStatementSource="SELECT LSET&#xA;FROM ETL_Load_Control&#xA;WHERE name = 'FactSales_Load';"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="LSET"
@@ -3868,7 +3868,8 @@ WHERE
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Import Sales to Stage\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      dataType="i4"
+                      dataType="wstr"
+                      length="50"
                       name="Param_6">
                       <properties>
                         <property
@@ -6034,7 +6035,7 @@ WHERE
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET Customer to metadata"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6055,7 +6056,7 @@ WHERE
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET Product to metadata"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6076,7 +6077,7 @@ WHERE
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET Sales to metadata"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6097,7 +6098,7 @@ WHERE
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LCET to Customer"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6120,7 +6121,7 @@ WHERE
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LCET to Product"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6143,7 +6144,7 @@ WHERE
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LCET to Sales"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -6335,7 +6336,7 @@ WHERE
           PanelSize="244,382"
           Size="244,425"
           Id="b0649383-7545-41c0-873a-697c601e773f"
-          TopLeft="325,40">
+          TopLeft="311.25,42.5">
           <GroupLayout.ChildrenIds>
             <s:String>Package\Get LSET to Product</s:String>
             <s:String>Package\Import Product to Stage</s:String>
@@ -6429,14 +6430,14 @@ WHERE
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
-          Text="Group 3"
+          Text="Sales"
           ParentId="Package"
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="244,382"
           Size="244,425"
           Id="c053bf4a-17e4-4b41-980e-d41a2caac06d"
-          TopLeft="633,5.5">
+          TopLeft="586.928571428572,43.8928571428571">
           <GroupLayout.ChildrenIds>
             <s:String>Package\Get LSET to Sales</s:String>
             <s:String>Package\Import Sales to Stage</s:String>
@@ -6535,7 +6536,7 @@ WHERE
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="236,398"
-          Size="236,441"
+          Size="236,442"
           Id="9359375e-0181-4cf0-afa5-bf934ba1fbb9"
           TopLeft="35,42.5">
           <GroupLayout.ChildrenIds>
@@ -6603,9 +6604,7 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6687,9 +6686,7 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6711,9 +6708,7 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6735,9 +6730,7 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6959,17 +6952,25 @@ WHERE
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="163,42"
-          Id="Package\Import Sales to Stage\Derived Column 2"
-          TopLeft="228.166666666667,481.621212121213" />
+          Size="154,42"
+          Id="Package\Import Sales to Stage\Derived Column 1"
+          TopLeft="356,133" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Import Sales to Stage\Derived Column"
+          TopLeft="118,140" />
         <NodeLayout
           Size="166,42"
           Id="Package\Import Sales to Stage\OLE DB Command"
           TopLeft="375.909090909091,679.454545454546" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Import Sales to Stage\Derived Column"
-          TopLeft="118,140" />
+          Size="98,42"
+          Id="Package\Import Sales to Stage\Sort"
+          TopLeft="263.216783216783,387.272727272727" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Import Sales to Stage\Conditional Split"
+          TopLeft="227.075757575758,575.454545454546" />
         <NodeLayout
           Size="166,42"
           Id="Package\Import Sales to Stage\Sales West Source"
@@ -6979,21 +6980,25 @@ WHERE
           Id="Package\Import Sales to Stage\Data Conversion 1"
           TopLeft="357,221" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Import Sales to Stage\Derived Column 1"
-          TopLeft="356,133" />
-        <NodeLayout
           Size="156,42"
           Id="Package\Import Sales to Stage\Data Conversion"
           TopLeft="116,224" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\Import Sales to Stage\Conditional Split"
-          TopLeft="227.075757575758,575.454545454546" />
-        <NodeLayout
           Size="169,42"
           Id="Package\Import Sales to Stage\Sales South Source"
           TopLeft="108,52" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Import Sales to Stage\Union All"
+          TopLeft="247.412587412587,305.034965034965" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Import Sales to Stage\Derived Column 2"
+          TopLeft="228.166666666667,481.621212121213" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Import Sales to Stage\OLE DB Destination"
+          TopLeft="91.8181818181818,670" />
         <EdgeLayout
           Id="Package\Import Sales to Stage.Paths[UpdateRows]"
           TopLeft="329.075757575758,617.454545454546">
@@ -7027,6 +7032,86 @@ WHERE
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="36.8401432291665,30.1800766283525,56.153046875,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales to Stage.Paths[Union All Output 1]"
+          TopLeft="310.064685314685,347.034965034965">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.2377622377621"
+              Start="0,0"
+              End="0,32.7377622377621">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.7377622377621" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales to Stage.Paths[Sort Output]"
+          TopLeft="310.941724941725,429.272727272727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.3484848484853"
+              Start="0,0"
+              End="0,44.8484848484853">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.8484848484853" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Sales to Stage.Paths[NewRows]"
+          TopLeft="280.075757575758,617.454545454546">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-102.757575757576,52.5454545454543"
+              Start="0,0"
+              End="-102.757575757576,45.0454545454543">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.340299547196" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.340299547196"
+                    Point2="0,21.340299547196"
+                    Point3="-4,21.340299547196" />
+                  <mssgle:LineSegment
+                    End="-98.7575757575761,21.340299547196" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-98.7575757575761,21.340299547196"
+                    Point2="-102.757575757576,21.340299547196"
+                    Point3="-102.757575757576,25.340299547196" />
+                  <mssgle:LineSegment
+                    End="-102.757575757576,45.0454545454543" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-73.3513660037881,26.340299547196,43.94515625,9.421875"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7140,70 +7225,6 @@ WHERE
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="98,42"
-          Id="Package\Import Sales to Stage\Sort"
-          TopLeft="263.216783216783,387.272727272727" />
-        <EdgeLayout
-          Id="Package\Import Sales to Stage.Paths[Sort Output]"
-          TopLeft="310.941724941725,429.272727272727">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.3484848484853"
-              Start="0,0"
-              End="0,44.8484848484853">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.8484848484853" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Import Sales to Stage\Union All"
-          TopLeft="247.412587412587,305.034965034965" />
-        <EdgeLayout
-          Id="Package\Import Sales to Stage.Paths[Data Conversion Output]"
-          TopLeft="194,266">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="95.079254079254,39.0349650349651"
-              Start="0,0"
-              End="95.079254079254,31.5349650349651">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.115321872255" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.115321872255"
-                    Point2="0,23.115321872255"
-                    Point3="4,23.115321872255" />
-                  <mssgle:LineSegment
-                    End="91.079254079254,23.115321872255" />
-                  <mssgle:CubicBezierSegment
-                    Point1="91.079254079254,23.115321872255"
-                    Point2="95.079254079254,23.115321872255"
-                    Point3="95.079254079254,27.115321872255" />
-                  <mssgle:LineSegment
-                    End="95.079254079254,31.5349650349651" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Sales to Stage.Paths[Data Conversion Output1]"
           TopLeft="439.5,263">
@@ -7239,65 +7260,37 @@ WHERE
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Import Sales to Stage.Paths[Union All Output 1]"
-          TopLeft="310.064685314685,347.034965034965">
+          Id="Package\Import Sales to Stage.Paths[Data Conversion Output]"
+          TopLeft="194,266">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.2377622377621"
+              EndConnector="95.079254079254,39.0349650349651"
               Start="0,0"
-              End="0,32.7377622377621">
+              End="95.079254079254,31.5349650349651">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.7377622377621" />
+                    End="0,19.115321872255" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.115321872255"
+                    Point2="0,23.115321872255"
+                    Point3="4,23.115321872255" />
+                  <mssgle:LineSegment
+                    End="91.079254079254,23.115321872255" />
+                  <mssgle:CubicBezierSegment
+                    Point1="91.079254079254,23.115321872255"
+                    Point2="95.079254079254,23.115321872255"
+                    Point3="95.079254079254,27.115321872255" />
+                  <mssgle:LineSegment
+                    End="95.079254079254,31.5349650349651" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Import Sales to Stage\OLE DB Destination"
-          TopLeft="91.8181818181818,670" />
-        <EdgeLayout
-          Id="Package\Import Sales to Stage.Paths[NewRows]"
-          TopLeft="280.075757575758,617.454545454546">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-102.757575757576,52.5454545454543"
-              Start="0,0"
-              End="-102.757575757576,45.0454545454543">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.340299547196" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.340299547196"
-                    Point2="0,21.340299547196"
-                    Point3="-4,21.340299547196" />
-                  <mssgle:LineSegment
-                    End="-98.7575757575761,21.340299547196" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-98.7575757575761,21.340299547196"
-                    Point2="-102.757575757576,21.340299547196"
-                    Point3="-102.757575757576,25.340299547196" />
-                  <mssgle:LineSegment
-                    End="-102.757575757576,45.0454545454543" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-73.351366003788,26.340299547196,43.94515625,9.421875"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
