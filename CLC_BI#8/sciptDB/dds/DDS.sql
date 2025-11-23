@@ -19,21 +19,30 @@ GO
 -- Bảng Hãng bay
 CREATE TABLE Dim_Airline (
     Airline_ID INT PRIMARY KEY,  -- Mã IATA
+	Airline_NK VARCHAR(10) NOT NULL,
     Airline_Name VARCHAR(255),
-    STATUS INT DEFAULT 1
+	SOURCE_ID VARCHAR(50),
+    STATUS INT DEFAULT 1,
+	CREATED DATETIME2,
+    MODIFIED DATETIME2,
+
 );
 GO
 
 -- Bảng Sân bay
 CREATE TABLE Dim_Airport (
     Airport_ID INT PRIMARY KEY,  -- Mã IATA
+	Airport_NK VARCHAR(10) NOT NULL,
     Airport_Name VARCHAR(255),
     City VARCHAR(100),
     State VARCHAR(50),
     Country VARCHAR(50),
     Latitude DECIMAL(10, 6),
     Longitude DECIMAL(10, 6),
-    STATUS INT DEFAULT 1
+	SOURCE_ID VARCHAR(50),
+    STATUS INT DEFAULT 1,
+	CREATED DATETIME2,
+    MODIFIED DATETIME2,
 );
 GO
 
@@ -41,7 +50,9 @@ GO
 CREATE TABLE Dim_Reason (
     Reason_ID CHAR(1) PRIMARY KEY,
     Description VARCHAR(100),
-    STATUS INT DEFAULT 1
+    STATUS INT DEFAULT 1,
+	CREATED DATETIME2,
+    MODIFIED DATETIME2,
 );
 GO
 
@@ -55,7 +66,9 @@ CREATE TABLE Dim_Date (
     Month_Name VARCHAR(20),
     Day_Of_Week VARCHAR(20),
     Is_Weekend BIT,
-    STATUS INT DEFAULT 1
+    STATUS INT DEFAULT 1,
+	CREATED DATETIME2,
+    MODIFIED DATETIME2,
 );
 GO
 
@@ -64,7 +77,7 @@ GO
 -- =============================================
 
 CREATE TABLE Fact_Flights (
-    Flight_ID INT PRIMARY KEY, -- Khóa chính tự tăng
+    Flight_ID INT PRIMARY KEY,
     
     -- Foreign Keys
     Date_Key INT,
@@ -76,8 +89,7 @@ CREATE TABLE Fact_Flights (
     -- Business Keys & Attributes
     Flight_Number VARCHAR(20),
     Tail_Number VARCHAR(20),
-    Scheduled_Dep_Time VARCHAR(5),  -- '05:56'
-    -- Hour_Key INT,                   -- 5
+    Scheduled_Dep_Time INT,  -- '05:56'
 
     -- Metrics (Facts)
     Dep_Delay DECIMAL(10,2),
@@ -98,7 +110,10 @@ CREATE TABLE Fact_Flights (
     Is_Cancelled BIT,
     Is_Diverted BIT,
 
+	SOURCE_ID VARCHAR(50),
     STATUS INT DEFAULT 1,
+	CREATED DATETIME2,
+    MODIFIED DATETIME2,
 
     -- Constraints
     FOREIGN KEY (Date_Key) REFERENCES Dim_Date(Date_Key),

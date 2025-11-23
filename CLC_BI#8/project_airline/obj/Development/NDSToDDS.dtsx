@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="NDSToDDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{E7E9D2BC-AE92-4C2A-B5D7-24FD8A77223A}">
+  DTS:VersionBuild="60"
+  DTS:VersionGUID="{80CB4989-090C-40BC-B1C2-C51BC8555312}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -133,7 +133,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="GET LSET_AIRLINES"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="2">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -155,7 +155,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="GET LSET_AIRPORTS"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -177,7 +177,7 @@
           DTS:LocaleID="-1"
           DTS:ObjectName="GET LSET_FLIGHTS"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-          DTS:ThreadHint="2">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -337,6 +337,52 @@
                       exclusionGroup="1"
                       name="Derived Column Output"
                       synchronousInputId="Package\Load NDS To DDS\Load Dim_Airlines\Derived Column 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airlines\Derived Column 1.Outputs[Derived Column Output].Columns[CURRENT_CREATED]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load NDS To DDS\Load Dim_Airlines\Derived Column 1.Outputs[Derived Column Output].Columns[CURRENT_CREATED]"
+                          name="CURRENT_CREATED"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DBDATE)[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBDATE)GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airlines\Derived Column 1.Outputs[Derived Column Output].Columns[CURRENT_UPDATED]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load NDS To DDS\Load Dim_Airlines\Derived Column 1.Outputs[Derived Column Output].Columns[CURRENT_UPDATED]"
+                          name="CURRENT_UPDATED"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DBDATE)[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBDATE)GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
                       <externalMetadataColumns />
                     </output>
                     <output
@@ -456,6 +502,34 @@
                           cachedName="STATUS"
                           externalMetadataColumnId="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
                           lineageId="Package\Load NDS To DDS\Load Dim_Airlines\Union All.Outputs[Union All Output 1].Columns[STATUS]" />
+                        <inputColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination.Inputs[OLE DB Destination Input].Columns[IATA_CODE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="IATA_CODE"
+                          externalMetadataColumnId="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Airline_NK]"
+                          lineageId="Package\Load NDS To DDS\Load Dim_Airlines\Union All.Outputs[Union All Output 1].Columns[IATA_CODE]" />
+                        <inputColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination.Inputs[OLE DB Destination Input].Columns[SOURCE_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SOURCE_ID"
+                          externalMetadataColumnId="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_ID]"
+                          lineageId="Package\Load NDS To DDS\Load Dim_Airlines\Union All.Outputs[Union All Output 1].Columns[SOURCE_ID]" />
+                        <inputColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination.Inputs[OLE DB Destination Input].Columns[CURRENT_CREATED]"
+                          cachedDataType="dbDate"
+                          cachedName="CURRENT_CREATED"
+                          externalMetadataColumnId="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CREATED]"
+                          lineageId="Package\Load NDS To DDS\Load Dim_Airlines\Derived Column 1.Outputs[Derived Column Output].Columns[CURRENT_CREATED]" />
+                        <inputColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination.Inputs[OLE DB Destination Input].Columns[CURRENT_UPDATED]"
+                          cachedDataType="dbDate"
+                          cachedName="CURRENT_UPDATED"
+                          externalMetadataColumnId="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIED]"
+                          lineageId="Package\Load NDS To DDS\Load Dim_Airlines\Derived Column 1.Outputs[Derived Column Output].Columns[CURRENT_UPDATED]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -473,6 +547,28 @@
                           refId="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
                           dataType="i4"
                           name="STATUS" />
+                        <externalMetadataColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Airline_NK]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Airline_NK" />
+                        <externalMetadataColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SOURCE_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CREATED]"
+                          dataType="wstr"
+                          length="27"
+                          name="CREATED" />
+                        <externalMetadataColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIED]"
+                          dataType="wstr"
+                          length="27"
+                          name="MODIFIED" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -616,6 +712,26 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
                           lineageId="Package\Load NDS To DDS\Load Dim_Airlines\NDS_AIRLINES.Outputs[OLE DB Source Output].Columns[STATUS]"
                           name="STATUS"
                           truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airlines\NDS_AIRLINES.Outputs[OLE DB Source Output].Columns[CREATED]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load NDS To DDS\Load Dim_Airlines\NDS_AIRLINES.Outputs[OLE DB Source Output].ExternalColumns[CREATED]"
+                          length="27"
+                          lineageId="Package\Load NDS To DDS\Load Dim_Airlines\NDS_AIRLINES.Outputs[OLE DB Source Output].Columns[CREATED]"
+                          name="CREATED"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airlines\NDS_AIRLINES.Outputs[OLE DB Source Output].Columns[MODIFIED]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load NDS To DDS\Load Dim_Airlines\NDS_AIRLINES.Outputs[OLE DB Source Output].ExternalColumns[MODIFIED]"
+                          length="27"
+                          lineageId="Package\Load NDS To DDS\Load Dim_Airlines\NDS_AIRLINES.Outputs[OLE DB Source Output].Columns[MODIFIED]"
+                          name="MODIFIED"
+                          truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -705,6 +821,18 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
                           lineageId="Package\Load NDS To DDS\Load Dim_Airlines\NDS_AIRLINES.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
+                        <outputColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airlines\NDS_AIRLINES.Outputs[OLE DB Source Error Output].Columns[CREATED]"
+                          dataType="wstr"
+                          length="27"
+                          lineageId="Package\Load NDS To DDS\Load Dim_Airlines\NDS_AIRLINES.Outputs[OLE DB Source Error Output].Columns[CREATED]"
+                          name="CREATED" />
+                        <outputColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airlines\NDS_AIRLINES.Outputs[OLE DB Source Error Output].Columns[MODIFIED]"
+                          dataType="wstr"
+                          length="27"
+                          lineageId="Package\Load NDS To DDS\Load Dim_Airlines\NDS_AIRLINES.Outputs[OLE DB Source Error Output].Columns[MODIFIED]"
+                          name="MODIFIED" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -1509,6 +1637,52 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
                       exclusionGroup="1"
                       name="Derived Column Output"
                       synchronousInputId="Package\Load NDS To DDS\Load Dim_Airports\Derived Column 3.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airports\Derived Column 3.Outputs[Derived Column Output].Columns[CREATED]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load NDS To DDS\Load Dim_Airports\Derived Column 3.Outputs[Derived Column Output].Columns[CREATED]"
+                          name="CREATED"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DBDATE)[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBDATE)GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airports\Derived Column 3.Outputs[Derived Column Output].Columns[MODIFIED]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load NDS To DDS\Load Dim_Airports\Derived Column 3.Outputs[Derived Column Output].Columns[MODIFIED]"
+                          name="MODIFIED"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DBDATE)[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBDATE)GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
                       <externalMetadataColumns />
                     </output>
                     <output
@@ -1668,6 +1842,34 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
                           cachedName="STATUS"
                           externalMetadataColumnId="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
                           lineageId="Package\Load NDS To DDS\Load Dim_Airports\Union All 1.Outputs[Union All Output 1].Columns[STATUS]" />
+                        <inputColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[IATA_CODE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="IATA_CODE"
+                          externalMetadataColumnId="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Airport_NK]"
+                          lineageId="Package\Load NDS To DDS\Load Dim_Airports\Union All 1.Outputs[Union All Output 1].Columns[IATA_CODE]" />
+                        <inputColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[SOURCE_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SOURCE_ID"
+                          externalMetadataColumnId="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_ID]"
+                          lineageId="Package\Load NDS To DDS\Load Dim_Airports\Union All 1.Outputs[Union All Output 1].Columns[SOURCE_ID]" />
+                        <inputColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[CREATED]"
+                          cachedDataType="dbDate"
+                          cachedName="CREATED"
+                          externalMetadataColumnId="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CREATED]"
+                          lineageId="Package\Load NDS To DDS\Load Dim_Airports\Derived Column 3.Outputs[Derived Column Output].Columns[CREATED]" />
+                        <inputColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[MODIFIED]"
+                          cachedDataType="dbDate"
+                          cachedName="MODIFIED"
+                          externalMetadataColumnId="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIED]"
+                          lineageId="Package\Load NDS To DDS\Load Dim_Airports\Derived Column 3.Outputs[Derived Column Output].Columns[MODIFIED]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1715,6 +1917,28 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
                           refId="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
                           dataType="i4"
                           name="STATUS" />
+                        <externalMetadataColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Airport_NK]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Airport_NK" />
+                        <externalMetadataColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SOURCE_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CREATED]"
+                          dataType="wstr"
+                          length="27"
+                          name="CREATED" />
+                        <externalMetadataColumn
+                          refId="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIED]"
+                          dataType="wstr"
+                          length="27"
+                          name="MODIFIED" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3145,6 +3369,105 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
             <pipeline
               version="1">
               <components>
+                <component
+                  refId="Package\Load NDS To DDS\Load Fact_Flights\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Load NDS To DDS\Load Fact_Flights\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load NDS To DDS\Load Fact_Flights\Derived Column.Inputs[Derived Column Input].Columns[CREATED]"
+                          cachedDataType="wstr"
+                          cachedLength="27"
+                          cachedName="CREATED"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load NDS To DDS\Load Fact_Flights\Merge Join.Outputs[Merge Join Output].Columns[CREATED]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DBDATE)[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBDATE)GETDATE()</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Load NDS To DDS\Load Fact_Flights\Derived Column.Inputs[Derived Column Input].Columns[MODIFIED]"
+                          cachedDataType="wstr"
+                          cachedLength="27"
+                          cachedName="MODIFIED"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Load NDS To DDS\Load Fact_Flights\Merge Join.Outputs[Merge Join Output].Columns[MODIFIED]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DBDATE)[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBDATE)GETDATE()</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load NDS To DDS\Load Fact_Flights\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Load NDS To DDS\Load Fact_Flights\Derived Column.Inputs[Derived Column Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Load NDS To DDS\Load Fact_Flights\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Load NDS To DDS\Load Fact_Flights\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load NDS To DDS\Load Fact_Flights\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load NDS To DDS\Load Fact_Flights\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load NDS To DDS\Load Fact_Flights\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load NDS To DDS\Load Fact_Flights\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
                 <component
                   refId="Package\Load NDS To DDS\Load Fact_Flights\Dim_Date"
                   componentClassID="Microsoft.OLEDBSource"
@@ -4901,6 +5224,28 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
                           cachedName="ARRIVAL_DELAY"
                           externalMetadataColumnId="Package\Load NDS To DDS\Load Fact_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Arr_Delay]"
                           lineageId="Package\Load NDS To DDS\Load Fact_Flights\Merge Join.Outputs[Merge Join Output].Columns[ARRIVAL_DELAY]" />
+                        <inputColumn
+                          refId="Package\Load NDS To DDS\Load Fact_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SOURCE_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SOURCE_ID"
+                          externalMetadataColumnId="Package\Load NDS To DDS\Load Fact_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_ID]"
+                          lineageId="Package\Load NDS To DDS\Load Fact_Flights\Merge Join.Outputs[Merge Join Output].Columns[SOURCE_ID]" />
+                        <inputColumn
+                          refId="Package\Load NDS To DDS\Load Fact_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CREATED]"
+                          cachedDataType="wstr"
+                          cachedLength="27"
+                          cachedName="CREATED"
+                          externalMetadataColumnId="Package\Load NDS To DDS\Load Fact_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CREATED]"
+                          lineageId="Package\Load NDS To DDS\Load Fact_Flights\Merge Join.Outputs[Merge Join Output].Columns[CREATED]" />
+                        <inputColumn
+                          refId="Package\Load NDS To DDS\Load Fact_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MODIFIED]"
+                          cachedDataType="wstr"
+                          cachedLength="27"
+                          cachedName="MODIFIED"
+                          externalMetadataColumnId="Package\Load NDS To DDS\Load Fact_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIED]"
+                          lineageId="Package\Load NDS To DDS\Load Fact_Flights\Merge Join.Outputs[Merge Join Output].Columns[MODIFIED]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -4944,9 +5289,7 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
                           name="Tail_Number" />
                         <externalMetadataColumn
                           refId="Package\Load NDS To DDS\Load Fact_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Scheduled_Dep_Time]"
-                          codePage="1252"
-                          dataType="str"
-                          length="5"
+                          dataType="i4"
                           name="Scheduled_Dep_Time" />
                         <externalMetadataColumn
                           refId="Package\Load NDS To DDS\Load Fact_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Dep_Delay]"
@@ -5024,6 +5367,22 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
                           refId="Package\Load NDS To DDS\Load Fact_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
                           dataType="i4"
                           name="STATUS" />
+                        <externalMetadataColumn
+                          refId="Package\Load NDS To DDS\Load Fact_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SOURCE_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Load NDS To DDS\Load Fact_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CREATED]"
+                          dataType="wstr"
+                          length="27"
+                          name="CREATED" />
+                        <externalMetadataColumn
+                          refId="Package\Load NDS To DDS\Load Fact_Flights\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MODIFIED]"
+                          dataType="wstr"
+                          length="27"
+                          name="MODIFIED" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -6176,8 +6535,13 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
               </components>
               <paths>
                 <path
-                  refId="Package\Load NDS To DDS\Load Fact_Flights.Paths[Merge Join Output]"
+                  refId="Package\Load NDS To DDS\Load Fact_Flights.Paths[Derived Column Output]"
                   endId="Package\Load NDS To DDS\Load Fact_Flights\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\Load NDS To DDS\Load Fact_Flights\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Load NDS To DDS\Load Fact_Flights.Paths[Merge Join Output]"
+                  endId="Package\Load NDS To DDS\Load Fact_Flights\Derived Column.Inputs[Derived Column Input]"
                   name="Merge Join Output"
                   startId="Package\Load NDS To DDS\Load Fact_Flights\Merge Join.Outputs[Merge Join Output]" />
                 <path
@@ -6224,6 +6588,30 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
           DTS:To="Package\Load NDS To DDS\Load Fact_Flights" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SET LSET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8BD94282-8272-47B5-92EE-D4BC9422D0D4}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SET LSET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6C70C009-7053-47A7-AF0A-79514B59B1F8}"
+          SQLTask:SqlStatementSource="UPDATE NDS_ETL_Metadata SET LSET = ?, STATUS = 'Success';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::CET"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="7"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -6242,6 +6630,14 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Load NDS To DDS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{426CD9C8-CC64-4CB5-BE51-408950FF5997}"
+      DTS:From="Package\Load NDS To DDS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\SET LSET" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -6341,6 +6737,10 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
           Size="382,337"
           Id="Package\Load NDS To DDS"
           TopLeft="298.75,397.25" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\SET LSET"
+          TopLeft="423.968253968254,782.063492063492" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="486,68">
@@ -6385,6 +6785,28 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="489.609126984127,734.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.8134920634922"
+              Start="0,0"
+              End="0,40.3134920634922">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.3134920634922" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -6394,21 +6816,17 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="123,42"
-          Id="Package\Load NDS To DDS\Load Dim_Airlines\Union All"
-          TopLeft="178.5,413.5" />
-        <NodeLayout
           Size="167,42"
           Id="Package\Load NDS To DDS\Load Dim_Airlines\Derived Column 1"
           TopLeft="156.5,515.5" />
         <NodeLayout
-          Size="158,42"
-          Id="Package\Load NDS To DDS\Load Dim_Airlines\NDS_AIRLINES"
-          TopLeft="161,5.5" />
-        <NodeLayout
           Size="216,42"
           Id="Package\Load NDS To DDS\Load Dim_Airlines\Slowly Changing Dimension"
           TopLeft="132,107.5" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination"
+          TopLeft="157.5,617.5" />
         <NodeLayout
           Size="173,42"
           Id="Package\Load NDS To DDS\Load Dim_Airlines\OLE DB Command"
@@ -6418,49 +6836,17 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
           Id="Package\Load NDS To DDS\Load Dim_Airlines\OLE DB Command 1"
           TopLeft="301,209.5" />
         <NodeLayout
-          Size="165,42"
-          Id="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination"
-          TopLeft="157.5,617.5" />
+          Size="158,42"
+          Id="Package\Load NDS To DDS\Load Dim_Airlines\NDS_AIRLINES"
+          TopLeft="161,5.5" />
         <NodeLayout
           Size="158,42"
           Id="Package\Load NDS To DDS\Load Dim_Airlines\Derived Column"
           TopLeft="21.0000000000001,209.5" />
-        <EdgeLayout
-          Id="Package\Load NDS To DDS\Load Dim_Airlines.Paths[New Output]"
-          TopLeft="240,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="19.1666666666667,264"
-              Start="0,0"
-              End="19.1666666666667,256.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,152.365971107544" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,152.365971107544"
-                    Point2="0,156.365971107544"
-                    Point3="4,156.365971107544" />
-                  <mssgle:LineSegment
-                    End="15.1666666666667,156.365971107544" />
-                  <mssgle:CubicBezierSegment
-                    Point1="15.1666666666667,156.365971107544"
-                    Point2="19.1666666666667,156.365971107544"
-                    Point3="19.1666666666667,160.365971107544" />
-                  <mssgle:LineSegment
-                    End="19.1666666666667,256.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-17.5080533854167,161.365971107544,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Load NDS To DDS\Load Dim_Airlines\Union All"
+          TopLeft="178.5,413.5" />
         <EdgeLayout
           Id="Package\Load NDS To DDS\Load Dim_Airlines.Paths[Inferred Member Updates Output]"
           TopLeft="292,149.5">
@@ -6552,9 +6938,7 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6588,9 +6972,7 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6612,9 +6994,7 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6636,9 +7016,7 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6672,22 +7050,48 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load NDS To DDS\Load Dim_Airlines.Paths[New Output]"
+          TopLeft="240,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.1666666666667,264"
+              Start="0,0"
+              End="19.1666666666667,256.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,152.365971107544" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,152.365971107544"
+                    Point2="0,156.365971107544"
+                    Point3="4,156.365971107544" />
+                  <mssgle:LineSegment
+                    End="15.1666666666667,156.365971107544" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.1666666666667,156.365971107544"
+                    Point2="19.1666666666667,156.365971107544"
+                    Point3="19.1666666666667,160.365971107544" />
+                  <mssgle:LineSegment
+                    End="19.1666666666667,256.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-17.5080533854167,161.365971107544,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load NDS To DDS\Load Dim_Airlines\NDS_AIRLINES">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load NDS To DDS\Load Dim_Airlines\Slowly Changing Dimension">
     <Properties>
@@ -6741,43 +7145,64 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load NDS To DDS\Load Dim_Airlines\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load NDS To DDS\Load Dim_Airlines\NDS_AIRLINES">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load NDS To DDS\Load Dim_Airports">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="165,42"
+          Id="Package\Load NDS To DDS\Load Dim_Airports\NDS_AIRPORTS"
+          TopLeft="166,5.5" />
+        <NodeLayout
           Size="182,42"
           Id="Package\Load NDS To DDS\Load Dim_Airports\OLE DB Command 2"
           TopLeft="5.5,311.5" />
         <NodeLayout
+          Size="167,42"
+          Id="Package\Load NDS To DDS\Load Dim_Airports\Derived Column 3"
+          TopLeft="165,515.5" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1"
+          TopLeft="161.5,617.5" />
+        <NodeLayout
           Size="182,42"
           Id="Package\Load NDS To DDS\Load Dim_Airports\OLE DB Command 3"
           TopLeft="309.5,209.5" />
-        <NodeLayout
-          Size="167,42"
-          Id="Package\Load NDS To DDS\Load Dim_Airports\Derived Column 2"
-          TopLeft="20,209.5" />
         <NodeLayout
           Size="216,42"
           Id="Package\Load NDS To DDS\Load Dim_Airports\Slowly Changing Dimension"
           TopLeft="140.5,107.5" />
         <NodeLayout
           Size="167,42"
-          Id="Package\Load NDS To DDS\Load Dim_Airports\Derived Column 3"
-          TopLeft="165,515.5" />
+          Id="Package\Load NDS To DDS\Load Dim_Airports\Derived Column 2"
+          TopLeft="20,209.5" />
         <NodeLayout
           Size="132,42"
           Id="Package\Load NDS To DDS\Load Dim_Airports\Union All 1"
           TopLeft="182.5,413.5" />
-        <NodeLayout
-          Size="174,42"
-          Id="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1"
-          TopLeft="161.5,617.5" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Load NDS To DDS\Load Dim_Airports\NDS_AIRPORTS"
-          TopLeft="166,5.5" />
         <EdgeLayout
           Id="Package\Load NDS To DDS\Load Dim_Airports.Paths[Union All Output 1]"
           TopLeft="248.5,455.5">
@@ -6797,9 +7222,7 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6821,9 +7244,7 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6857,9 +7278,7 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6989,9 +7408,7 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7013,14 +7430,33 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load NDS To DDS\Load Dim_Airports\NDS_AIRPORTS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load NDS To DDS\Load Dim_Airports\Insert Destination 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load NDS To DDS\Load Dim_Airports\Slowly Changing Dimension">
     <Properties>
@@ -7104,83 +7540,73 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load NDS To DDS\Load Dim_Airports\NDS_AIRPORTS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load NDS To DDS\Load Fact_Flights">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="141,42"
-          Id="Package\Load NDS To DDS\Load Fact_Flights\NDS_Flights"
-          TopLeft="135,44" />
-        <NodeLayout
           Size="128,42"
           Id="Package\Load NDS To DDS\Load Fact_Flights\Dim_Date"
           TopLeft="409,45" />
         <NodeLayout
-          Size="99,42"
-          Id="Package\Load NDS To DDS\Load Fact_Flights\Sort"
-          TopLeft="158,135" />
-        <EdgeLayout
-          Id="Package\Load NDS To DDS\Load Fact_Flights.Paths[OLE DB Source Output]"
-          TopLeft="206.5,86">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,49"
-              Start="0,0"
-              End="0,41.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="108,42"
           Id="Package\Load NDS To DDS\Load Fact_Flights\Sort 1"
           TopLeft="424,132" />
-        <EdgeLayout
-          Id="Package\Load NDS To DDS\Load Fact_Flights.Paths[OLE DB Source Output1]"
-          TopLeft="475.5,87">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45"
-              Start="0,0"
-              End="0,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Load NDS To DDS\Load Fact_Flights\NDS_Flights"
+          TopLeft="135,44" />
+        <NodeLayout
+          Size="99,42"
+          Id="Package\Load NDS To DDS\Load Fact_Flights\Sort"
+          TopLeft="158,135" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Load NDS To DDS\Load Fact_Flights\OLE DB Destination"
+          TopLeft="258,417" />
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Load NDS To DDS\Load Fact_Flights\Derived Column"
+          TopLeft="270,332" />
         <NodeLayout
           Size="133,42"
           Id="Package\Load NDS To DDS\Load Fact_Flights\Merge Join"
           TopLeft="279,242" />
+        <EdgeLayout
+          Id="Package\Load NDS To DDS\Load Fact_Flights.Paths[Sort Output1]"
+          TopLeft="478,174">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-111.666666666667,68"
+              Start="0,0"
+              End="-111.666666666667,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.3150074294205" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.3150074294205"
+                    Point2="0,40.3150074294205"
+                    Point3="-4,40.3150074294205" />
+                  <mssgle:LineSegment
+                    End="-107.666666666667,40.3150074294205" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-107.666666666667,40.3150074294205"
+                    Point2="-111.666666666667,40.3150074294205"
+                    Point3="-111.666666666667,44.3150074294205" />
+                  <mssgle:LineSegment
+                    End="-111.666666666667,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load NDS To DDS\Load Fact_Flights.Paths[Sort Output]"
           TopLeft="207.5,177">
@@ -7216,31 +7642,19 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load NDS To DDS\Load Fact_Flights.Paths[Sort Output1]"
-          TopLeft="478,174">
+          Id="Package\Load NDS To DDS\Load Fact_Flights.Paths[OLE DB Source Output1]"
+          TopLeft="475.5,87">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-111.666666666667,68"
+              EndConnector="0,45"
               Start="0,0"
-              End="-111.666666666667,60.5">
+              End="0,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.3150074294205" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,36.3150074294205"
-                    Point2="0,40.3150074294205"
-                    Point3="-4,40.3150074294205" />
-                  <mssgle:LineSegment
-                    End="-107.666666666667,40.3150074294205" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-107.666666666667,40.3150074294205"
-                    Point2="-111.666666666667,40.3150074294205"
-                    Point3="-111.666666666667,44.3150074294205" />
-                  <mssgle:LineSegment
-                    End="-111.666666666667,60.5" />
+                    End="0,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7249,24 +7663,64 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Load NDS To DDS\Load Fact_Flights\OLE DB Destination"
-          TopLeft="251,330" />
         <EdgeLayout
-          Id="Package\Load NDS To DDS\Load Fact_Flights.Paths[Merge Join Output]"
-          TopLeft="342.5,284">
+          Id="Package\Load NDS To DDS\Load Fact_Flights.Paths[OLE DB Source Output]"
+          TopLeft="206.5,86">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,46"
+              EndConnector="0,49"
               Start="0,0"
-              End="0,38.5">
+              End="0,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.5" />
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load NDS To DDS\Load Fact_Flights.Paths[Merge Join Output]"
+          TopLeft="347.25,284">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load NDS To DDS\Load Fact_Flights.Paths[Derived Column Output]"
+          TopLeft="347.75,374">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7279,14 +7733,6 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load NDS To DDS\Load Fact_Flights\NDS_Flights">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Load NDS To DDS\Load Fact_Flights\Dim_Date">
     <Properties>
       <Property>
@@ -7296,6 +7742,14 @@ OR (MODIFIED &gt; ? AND MODIFIED &lt;= ?);</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load NDS To DDS\Load Fact_Flights\NDS_Flights">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
