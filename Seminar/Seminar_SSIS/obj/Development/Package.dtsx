@@ -11,13 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-<<<<<<< HEAD
   DTS:VersionBuild="150"
   DTS:VersionGUID="{A4F3A895-DF31-48FF-9CE7-2BCE12615246}">
-=======
-  DTS:VersionBuild="63"
-  DTS:VersionGUID="{D1264ABF-C244-4CF0-A4B7-FE6F68580FF4}">
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -96,7 +91,6 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-<<<<<<< HEAD
       DTS:refId="Package.ConnectionManagers[DESKTOP-J2MIDQL\SQLEXPRESS.StagingDB_Seminar]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{9EA238DE-4A32-4C2B-BB09-1E32D3D59AD1}"
@@ -122,83 +116,6 @@
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Product_Demo]"
-=======
-      DTS:refId="Package.ConnectionManagers[Customer_Fixed]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{133CA487-4CEE-4866-8D2F-FEF796DDAD1C}"
-      DTS:ObjectName="Customer_Fixed">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="65001"
-          DTS:ConnectionString="D:\hcmus_courses\BI\Project\git-repo\Seminar\Data\Customer.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Customer ID"
-              DTS:DTSID="{DE9CFBE9-1FB5-464B-AACC-61C3F69D05F6}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Customer Name"
-              DTS:DTSID="{202BD5F6-F566-4E00-9B5C-D6EFCBCE0FA4}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Segment"
-              DTS:DTSID="{D70FD6E6-E14B-492E-B580-CFFE97B29C43}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Country"
-              DTS:DTSID="{2F343652-2BB2-48E9-A42F-58AE0890B0FF}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="City"
-              DTS:DTSID="{72487B60-28FD-47CE-A9E1-99F1A649CCEC}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="State"
-              DTS:DTSID="{7175A375-016A-400C-BAB3-63C0C93703E2}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{F13CFBF4-79DD-4ECF-BDF8-DBD697B0BE29}"
       DTS:ObjectName="Product_Demo">
@@ -345,418 +262,6 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[MSI.MetaData_Sales]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{B0939D19-D6F6-478B-BBC5-785E0CAB9056}"
-      DTS:ObjectName="MSI.MetaData_Sales">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MSI;Initial Catalog=MetaData_Sales;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{B0939D19-D6F6-478B-BBC5-785E0CAB9056}MSI.MetaData_Sales;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[MSI.StagingDB_Seminar]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{D6BAC4DD-5FF1-463E-BB64-BB17AD68D247}"
-      DTS:ObjectName="MSI.StagingDB_Seminar">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=MSI;Initial Catalog=StagingDB_Seminar;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Package-{D6BAC4DD-5FF1-463E-BB64-BB17AD68D247}MSI.StagingDB_Seminar;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Product]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{451C6E72-651E-4EF2-9320-08E1F49CA5AC}"
-      DTS:ObjectName="Product">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="D:\BI\Seminar\Products.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Product ID"
-              DTS:DTSID="{5C373F44-60B5-48B7-80B2-80F4607EBF17}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Category"
-              DTS:DTSID="{A992F011-6E80-4984-86F7-84328F5FC3ED}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Sub-Category"
-              DTS:DTSID="{030FFFE3-A227-4F4F-9216-554E2CAC3896}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Product Name"
-              DTS:DTSID="{CC296A36-9675-418F-9980-780BB5569856}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Product_Fixed]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{F33EB7CA-647F-4E1D-A79E-B10243849A96}"
-      DTS:ObjectName="Product_Fixed">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="1252"
-          DTS:ConnectionString="D:\hcmus_courses\BI\Project\git-repo\Seminar\Data\Products.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Product ID"
-              DTS:DTSID="{51EEEEAB-78F5-4D9B-BF64-9C4792651FBD}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Category"
-              DTS:DTSID="{DE2FC3E0-0D35-4C64-A8D5-7CC347636B6A}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Sub-Category"
-              DTS:DTSID="{B3C113DC-7CEB-48D2-AF65-5E25BD980568}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Product Name"
-              DTS:DTSID="{BEE3DB9D-8D2A-4106-9EA5-E09E2B1DE97F}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Sales South]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{A616713B-B705-4B28-83B4-13CED4C2435E}"
-      DTS:ObjectName="Sales South">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="65001"
-          DTS:ConnectionString="D:\BI\Seminar\Sales_South.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Order ID"
-              DTS:DTSID="{D8C1D5A0-8E3C-4236-B721-10950FDB6EAD}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Order Date"
-              DTS:DTSID="{5E799A8B-B1BF-4890-89EA-346034C546A7}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Customer ID"
-              DTS:DTSID="{A7336D34-414C-4598-8924-E8375FDC9D41}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Region"
-              DTS:DTSID="{CA0967B1-B5C5-47A4-BEE1-CBFC4F31529F}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Product ID"
-              DTS:DTSID="{044603E5-34AA-4591-826C-9AC527C1CD38}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Sales"
-              DTS:DTSID="{E7B288EE-C21F-4153-9AC7-CE4EAE3A95BE}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Quantity"
-              DTS:DTSID="{820264EA-58D9-4F24-AA27-DE014854873E}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Profit"
-              DTS:DTSID="{3BF82E7A-61E8-45C0-839B-F792E5C69FDE}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Sales South Fixed]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{A69F436A-E19F-4958-B825-4CF0CD0C37EB}"
-      DTS:ObjectName="Sales South Fixed">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="65001"
-          DTS:ConnectionString="D:\hcmus_courses\BI\Project\git-repo\Seminar\Data\Sales_South.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Order ID"
-              DTS:DTSID="{D62A897B-43AB-4DDB-8DA2-AEADEBC8BDF6}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Order Date"
-              DTS:DTSID="{709C3C58-25DF-4AAF-936E-53E912705D49}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Customer ID"
-              DTS:DTSID="{1E249420-A477-4D51-88F1-262AB1803222}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Region"
-              DTS:DTSID="{D135DD53-66C8-447F-830D-D04761C469DE}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Product ID"
-              DTS:DTSID="{E4CE810B-FF47-4CA1-A01C-E8878AA00FF4}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Sales"
-              DTS:DTSID="{1C504945-4D78-4D9F-80E6-D031DFFCA1C2}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Quantity"
-              DTS:DTSID="{8497B876-69E8-40B4-9BA9-A1AA3A942365}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Profit"
-              DTS:DTSID="{B8E32F74-4EE2-496A-A105-C07AF96803CD}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Sales West Fixed]"
-      DTS:CreationName="FLATFILE"
-      DTS:DTSID="{3F783E4E-765D-4952-927E-2A0AE0E1D3EF}"
-      DTS:ObjectName="Sales West Fixed">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:Format="Delimited"
-          DTS:LocaleID="1033"
-          DTS:HeaderRowDelimiter="_x000D__x000A_"
-          DTS:ColumnNamesInFirstDataRow="True"
-          DTS:RowDelimiter=""
-          DTS:TextQualifier="_x003C_none_x003E_"
-          DTS:CodePage="65001"
-          DTS:ConnectionString="D:\hcmus_courses\BI\Project\git-repo\Seminar\Data\Sales_West.csv">
-          <DTS:FlatFileColumns>
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Order ID"
-              DTS:DTSID="{915758F1-09D0-4862-A811-6514F025AD58}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Order Date"
-              DTS:DTSID="{769928E1-B1E2-4DBF-BF77-A138A50875B9}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Customer ID"
-              DTS:DTSID="{533BEFC7-3F8E-4F89-AA34-38CA221E4C19}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Region"
-              DTS:DTSID="{A70E6BAD-F7E1-46BC-ABC8-DF5EEBBC1A64}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Product ID"
-              DTS:DTSID="{BE9DBE42-1224-49A0-A147-DE4BDD66227B}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Sales"
-              DTS:DTSID="{EE815426-5DAD-45DB-8DE7-D255A6FFC7BE}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Quantity"
-              DTS:DTSID="{6AB91FDF-8A7F-4FF6-AD76-E71A9F94ACE2}"
-              DTS:CreationName="" />
-            <DTS:FlatFileColumn
-              DTS:ColumnType="Delimited"
-              DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="50"
-              DTS:DataType="129"
-              DTS:TextQualified="True"
-              DTS:ObjectName="Profit"
-              DTS:DTSID="{871108E5-29FC-4A47-ABCD-867DDE12B09A}"
-              DTS:CreationName="" />
-          </DTS:FlatFileColumns>
-        </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
@@ -796,19 +301,11 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET to Customer"
-<<<<<<< HEAD
       DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{E28DB52E-7B5C-40F6-8B04-4F471B9317CB}"
-=======
-      DTS:ThreadHint="2">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{B0939D19-D6F6-478B-BBC5-785E0CAB9056}"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
           SQLTask:SqlStatementSource="SELECT LSET&#xA;FROM ETL_Load_Control&#xA;WHERE name = 'DimCustomer_Load';"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -825,7 +322,6 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET to Product"
-<<<<<<< HEAD
       DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -848,38 +344,11 @@
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LSET to Sales"
-=======
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-<<<<<<< HEAD
           SQLTask:Connection="{DA380F2D-BF78-4E15-B9B8-EB97EC5148C4}"
-=======
-          SQLTask:Connection="{B0939D19-D6F6-478B-BBC5-785E0CAB9056}"
-          SQLTask:SqlStatementSource="SELECT LSET&#xA;FROM ETL_Load_Control&#xA;WHERE name = 'DimProduct_Load';"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="LSET"
-            SQLTask:DtsVariableName="User::LSET" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Get LSET to Sales"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{28dfb107-7e30-43e3-8fbc-cba5e8da6cc1}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Get LSET to Sales"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{B0939D19-D6F6-478B-BBC5-785E0CAB9056}"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
           SQLTask:SqlStatementSource="SELECT LSET&#xA;FROM ETL_Load_Control&#xA;WHERE name = 'dbo.Sales_Combined_Stage';"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -1464,8 +933,8 @@
               <connections>
                 <connection
                   refId="Package\Import Customer to Stage\Flat File Source.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Customer_Fixed]"
-                  connectionManagerRefId="Package.ConnectionManagers[Customer_Fixed]"
+                  connectionManagerID="Package.ConnectionManagers[Customer]"
+                  connectionManagerRefId="Package.ConnectionManagers[Customer]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -1712,13 +1181,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Import Customer to Stage\OLE DB Command.Connections[OleDbConnection]"
-<<<<<<< HEAD
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-J2MIDQL\SQLEXPRESS.StagingDB_Seminar]"
                   connectionManagerRefId="Package.ConnectionManagers[DESKTOP-J2MIDQL\SQLEXPRESS.StagingDB_Seminar]"
-=======
-                  connectionManagerID="Package.ConnectionManagers[MSI.StagingDB_Seminar]"
-                  connectionManagerRefId="Package.ConnectionManagers[MSI.StagingDB_Seminar]"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1941,13 +1405,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Import Customer to Stage\OLE DB Destination.Connections[OleDbConnection]"
-<<<<<<< HEAD
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-J2MIDQL\SQLEXPRESS.StagingDB_Seminar]"
                   connectionManagerRefId="Package.ConnectionManagers[DESKTOP-J2MIDQL\SQLEXPRESS.StagingDB_Seminar]"
-=======
-                  connectionManagerID="Package.ConnectionManagers[MSI.StagingDB_Seminar]"
-                  connectionManagerRefId="Package.ConnectionManagers[MSI.StagingDB_Seminar]"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2155,7 +1614,6 @@ WHERE
                       cachedDataType="dbTimeStamp"
                       cachedName="UpdateDate"
                       lineageId="Package\Import Product to Stage\Derived Column.Outputs[Derived Column Output].Columns[UpdateDate]" />
-<<<<<<< HEAD
                     <inputColumn
                       refId="Package\Import Product to Stage\Conditional Split.Inputs[Conditional Split Input].Columns[LSET_Col]"
                       cachedDataType="dbTimeStamp"
@@ -2166,8 +1624,6 @@ WHERE
                       cachedDataType="dbTimeStamp"
                       cachedName="CET_Col"
                       lineageId="Package\Import Product to Stage\Derived Column 1.Outputs[Derived Column Output].Columns[CET_Col]" />
-=======
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -2187,21 +1643,13 @@ WHERE
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-<<<<<<< HEAD
                       name="Expression">![ISNULL](#{Package\Import Product to Stage\Derived Column.Outputs[Derived Column Output].Columns[CreateDate]}) &amp;&amp; #{Package\Import Product to Stage\Derived Column.Outputs[Derived Column Output].Columns[CreateDate]} &gt; #{Package\Import Product to Stage\Derived Column 1.Outputs[Derived Column Output].Columns[LSET_Col]} &amp;&amp; #{Package\Import Product to Stage\Derived Column.Outputs[Derived Column Output].Columns[CreateDate]} &lt;= #{Package\Import Product to Stage\Derived Column 1.Outputs[Derived Column Output].Columns[CET_Col]}</property>
-=======
-                      name="Expression">(#{Package\Import Product to Stage\Derived Column.Outputs[Derived Column Output].Columns[CreateDate]} &gt; @[User::LSET] &amp;&amp; #{Package\Import Product to Stage\Derived Column.Outputs[Derived Column Output].Columns[CreateDate]} &lt;= @[User::CET])</property>
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-<<<<<<< HEAD
                       name="FriendlyExpression">!ISNULL(CreateDate) &amp;&amp; CreateDate &gt; LSET_Col &amp;&amp; CreateDate &lt;= CET_Col</property>
-=======
-                      name="FriendlyExpression">(CreateDate &gt; @[User::LSET] &amp;&amp; CreateDate &lt;= @[User::CET])</property>
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -2223,21 +1671,13 @@ WHERE
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-<<<<<<< HEAD
                       name="Expression">![ISNULL](#{Package\Import Product to Stage\Derived Column.Outputs[Derived Column Output].Columns[UpdateDate]}) &amp;&amp; #{Package\Import Product to Stage\Derived Column.Outputs[Derived Column Output].Columns[UpdateDate]} &gt; #{Package\Import Product to Stage\Derived Column 1.Outputs[Derived Column Output].Columns[LSET_Col]} &amp;&amp; #{Package\Import Product to Stage\Derived Column.Outputs[Derived Column Output].Columns[UpdateDate]} &lt;= #{Package\Import Product to Stage\Derived Column 1.Outputs[Derived Column Output].Columns[CET_Col]}</property>
-=======
-                      name="Expression">(#{Package\Import Product to Stage\Derived Column.Outputs[Derived Column Output].Columns[UpdateDate]} &gt; @[User::LSET] &amp;&amp; #{Package\Import Product to Stage\Derived Column.Outputs[Derived Column Output].Columns[UpdateDate]} &lt;= @[User::CET])</property>
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                     <property
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the friendly version of the expression. This expression version uses column names."
                       expressionType="Notify"
-<<<<<<< HEAD
                       name="FriendlyExpression">!ISNULL(UpdateDate) &amp;&amp; UpdateDate &gt; LSET_Col &amp;&amp; UpdateDate &lt;= CET_Col</property>
-=======
-                      name="FriendlyExpression">(UpdateDate &gt; @[User::LSET] &amp;&amp; UpdateDate &lt;= @[User::CET])</property>
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                     <property
                       dataType="System.Int32"
                       description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
@@ -2297,48 +1737,30 @@ WHERE
                   <inputColumns>
                     <inputColumn
                       refId="Package\Import Product to Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Product ID]"
-<<<<<<< HEAD
                       cachedCodepage="65001"
-=======
-                      cachedCodepage="1252"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Product ID"
                       lineageId="Package\Import Product to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Product ID]" />
                     <inputColumn
                       refId="Package\Import Product to Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Category]"
-<<<<<<< HEAD
                       cachedCodepage="65001"
-=======
-                      cachedCodepage="1252"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Category"
                       lineageId="Package\Import Product to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Category]" />
                     <inputColumn
                       refId="Package\Import Product to Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Sub-Category]"
-<<<<<<< HEAD
                       cachedCodepage="65001"
-=======
-                      cachedCodepage="1252"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Sub-Category"
                       lineageId="Package\Import Product to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Sub-Category]" />
                     <inputColumn
                       refId="Package\Import Product to Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Product Name]"
-<<<<<<< HEAD
                       cachedCodepage="65001"
                       cachedDataType="str"
                       cachedLength="255"
-=======
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       cachedName="Product Name"
                       lineageId="Package\Import Product to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Product Name]" />
                   </inputColumns>
@@ -2420,11 +1842,7 @@ WHERE
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-<<<<<<< HEAD
                       length="255"
-=======
-                      length="50"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       lineageId="Package\Import Product to Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Product Name]"
                       name="Copy of Product Name"
                       truncationRowDisposition="FailComponent">
@@ -2503,21 +1921,13 @@ WHERE
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-<<<<<<< HEAD
                           name="Expression">(DT_DBTIMESTAMP)[GETDATE]()</property>
-=======
-                          name="Expression">([GETDATE]())</property>
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-<<<<<<< HEAD
                           name="FriendlyExpression">(DT_DBTIMESTAMP)GETDATE()</property>
-=======
-                          name="FriendlyExpression">(GETDATE())</property>
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -2571,7 +1981,6 @@ WHERE
               </outputs>
             </component>
             <component
-<<<<<<< HEAD
               refId="Package\Import Product to Stage\Derived Column 1"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
@@ -2667,8 +2076,6 @@ WHERE
               </outputs>
             </component>
             <component
-=======
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
               refId="Package\Import Product to Stage\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
               contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -2690,13 +2097,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Import Product to Stage\Flat File Source.Connections[FlatFileConnection]"
-<<<<<<< HEAD
                   connectionManagerID="Package.ConnectionManagers[Product_Demo]"
                   connectionManagerRefId="Package.ConnectionManagers[Product_Demo]"
-=======
-                  connectionManagerID="Package.ConnectionManagers[Product_Fixed]"
-                  connectionManagerRefId="Package.ConnectionManagers[Product_Fixed]"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -2706,11 +2108,7 @@ WHERE
                   <outputColumns>
                     <outputColumn
                       refId="Package\Import Product to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Product ID]"
-<<<<<<< HEAD
                       codePage="65001"
-=======
-                      codePage="1252"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -2732,11 +2130,7 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Product to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Category]"
-<<<<<<< HEAD
                       codePage="65001"
-=======
-                      codePage="1252"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -2758,11 +2152,7 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Product to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Sub-Category]"
-<<<<<<< HEAD
                       codePage="65001"
-=======
-                      codePage="1252"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
@@ -2784,20 +2174,12 @@ WHERE
                     </outputColumn>
                     <outputColumn
                       refId="Package\Import Product to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Product Name]"
-<<<<<<< HEAD
                       codePage="65001"
-=======
-                      codePage="1252"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Import Product to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Product Name]"
-<<<<<<< HEAD
                       length="255"
-=======
-                      length="50"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       lineageId="Package\Import Product to Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Product Name]"
                       name="Product Name"
                       truncationRowDisposition="FailComponent">
@@ -2817,45 +2199,27 @@ WHERE
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Import Product to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Product ID]"
-<<<<<<< HEAD
                       codePage="65001"
-=======
-                      codePage="1252"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       dataType="str"
                       length="50"
                       name="Product ID" />
                     <externalMetadataColumn
                       refId="Package\Import Product to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Category]"
-<<<<<<< HEAD
                       codePage="65001"
-=======
-                      codePage="1252"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       dataType="str"
                       length="50"
                       name="Category" />
                     <externalMetadataColumn
                       refId="Package\Import Product to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sub-Category]"
-<<<<<<< HEAD
                       codePage="65001"
-=======
-                      codePage="1252"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       dataType="str"
                       length="50"
                       name="Sub-Category" />
                     <externalMetadataColumn
                       refId="Package\Import Product to Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Product Name]"
-<<<<<<< HEAD
                       codePage="65001"
                       dataType="str"
                       length="255"
-=======
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       name="Product Name" />
                   </externalMetadataColumns>
                 </output>
@@ -2923,13 +2287,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Import Product to Stage\OLE DB Command.Connections[OleDbConnection]"
-<<<<<<< HEAD
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-J2MIDQL\SQLEXPRESS.StagingDB_Seminar]"
                   connectionManagerRefId="Package.ConnectionManagers[DESKTOP-J2MIDQL\SQLEXPRESS.StagingDB_Seminar]"
-=======
-                  connectionManagerID="Package.ConnectionManagers[MSI.StagingDB_Seminar]"
-                  connectionManagerRefId="Package.ConnectionManagers[MSI.StagingDB_Seminar]"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2958,11 +2317,7 @@ WHERE
                     <inputColumn
                       refId="Package\Import Product to Stage\OLE DB Command.Inputs[OLE DB Command Input].Columns[Copy of Product Name]"
                       cachedDataType="wstr"
-<<<<<<< HEAD
                       cachedLength="255"
-=======
-                      cachedLength="50"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       cachedName="Copy of Product Name"
                       externalMetadataColumnId="Package\Import Product to Stage\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Import Product to Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Product Name]" />
@@ -3118,13 +2473,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Import Product to Stage\OLE DB Destination.Connections[OleDbConnection]"
-<<<<<<< HEAD
                   connectionManagerID="Package.ConnectionManagers[DESKTOP-J2MIDQL\SQLEXPRESS.StagingDB_Seminar]"
                   connectionManagerRefId="Package.ConnectionManagers[DESKTOP-J2MIDQL\SQLEXPRESS.StagingDB_Seminar]"
-=======
-                  connectionManagerID="Package.ConnectionManagers[MSI.StagingDB_Seminar]"
-                  connectionManagerRefId="Package.ConnectionManagers[MSI.StagingDB_Seminar]"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3172,11 +2522,7 @@ WHERE
                     <inputColumn
                       refId="Package\Import Product to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Product Name]"
                       cachedDataType="wstr"
-<<<<<<< HEAD
                       cachedLength="255"
-=======
-                      cachedLength="50"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                       cachedName="Copy of Product Name"
                       externalMetadataColumnId="Package\Import Product to Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
                       lineageId="Package\Import Product to Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Product Name]" />
@@ -3243,11 +2589,7 @@ WHERE
           <paths>
             <path
               refId="Package\Import Product to Stage.Paths[Data Conversion Output]"
-<<<<<<< HEAD
               endId="Package\Import Product to Stage\Derived Column 1.Inputs[Derived Column Input]"
-=======
-              endId="Package\Import Product to Stage\Conditional Split.Inputs[Conditional Split Input]"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
               name="Data Conversion Output"
               startId="Package\Import Product to Stage\Data Conversion.Outputs[Data Conversion Output]" />
             <path
@@ -3256,14 +2598,11 @@ WHERE
               name="Derived Column Output"
               startId="Package\Import Product to Stage\Derived Column.Outputs[Derived Column Output]" />
             <path
-<<<<<<< HEAD
               refId="Package\Import Product to Stage.Paths[Derived Column Output1]"
               endId="Package\Import Product to Stage\Conditional Split.Inputs[Conditional Split Input]"
               name="Derived Column Output"
               startId="Package\Import Product to Stage\Derived Column 1.Outputs[Derived Column Output]" />
             <path
-=======
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
               refId="Package\Import Product to Stage.Paths[Flat File Source Output]"
               endId="Package\Import Product to Stage\Derived Column.Inputs[Derived Column Input]"
               name="Flat File Source Output"
@@ -3286,10 +2625,7 @@ WHERE
       DTS:refId="Package\Import Sales to Stage"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-<<<<<<< HEAD
       DTS:Disabled="True"
-=======
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
       DTS:DTSID="{00807102-89bc-4396-8d4a-29df7c36152d}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -4191,13 +3527,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Import Sales to Stage\OLE DB Command.Connections[OleDbConnection]"
-<<<<<<< HEAD
                   connectionManagerID="{E09FE498-C86B-48EA-8CA5-274F7DC5A2CE}:invalid"
                   connectionManagerRefId="{E09FE498-C86B-48EA-8CA5-274F7DC5A2CE}:invalid"
-=======
-                  connectionManagerID="Package.ConnectionManagers[MSI.StagingDB_Seminar]"
-                  connectionManagerRefId="Package.ConnectionManagers[MSI.StagingDB_Seminar]"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4453,13 +3784,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Import Sales to Stage\OLE DB Destination.Connections[OleDbConnection]"
-<<<<<<< HEAD
                   connectionManagerID="{E09FE498-C86B-48EA-8CA5-274F7DC5A2CE}:invalid"
                   connectionManagerRefId="{E09FE498-C86B-48EA-8CA5-274F7DC5A2CE}:invalid"
-=======
-                  connectionManagerID="Package.ConnectionManagers[MSI.StagingDB_Seminar]"
-                  connectionManagerRefId="Package.ConnectionManagers[MSI.StagingDB_Seminar]"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4635,13 +3961,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Import Sales to Stage\Sales South Source.Connections[FlatFileConnection]"
-<<<<<<< HEAD
                   connectionManagerID="Package.ConnectionManagers[Sales South]"
                   connectionManagerRefId="Package.ConnectionManagers[Sales South]"
-=======
-                  connectionManagerID="Package.ConnectionManagers[Sales South Fixed]"
-                  connectionManagerRefId="Package.ConnectionManagers[Sales South Fixed]"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -4929,13 +4250,8 @@ WHERE
               <connections>
                 <connection
                   refId="Package\Import Sales to Stage\Sales West Source.Connections[FlatFileConnection]"
-<<<<<<< HEAD
                   connectionManagerID="Package.ConnectionManagers[Sales South]"
                   connectionManagerRefId="Package.ConnectionManagers[Sales South]"
-=======
-                  connectionManagerID="Package.ConnectionManagers[Sales West Fixed]"
-                  connectionManagerRefId="Package.ConnectionManagers[Sales West Fixed]"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -5919,7 +5235,6 @@ WHERE
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET Customer to metadata"
-<<<<<<< HEAD
       DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -5929,17 +5244,6 @@ WHERE
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
             SQLTask:ResultName="CET"
-=======
-      DTS:ThreadHint="2">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{B0939D19-D6F6-478B-BBC5-785E0CAB9056}"
-          SQLTask:SqlStatementSource="SELECT GETDATE() AS Current_CET"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="0"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
             SQLTask:DtsVariableName="User::CET" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
@@ -5952,7 +5256,6 @@ WHERE
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET Product to metadata"
-<<<<<<< HEAD
       DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -5975,34 +5278,11 @@ WHERE
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Set CET Sales to metadata"
-=======
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{B0939D19-D6F6-478B-BBC5-785E0CAB9056}"
-          SQLTask:SqlStatementSource="SELECT GETDATE() AS Current_CET"
-          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ResultBinding
-            SQLTask:ResultName="0"
-            SQLTask:DtsVariableName="User::CET" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Set CET Sales to metadata"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{e76ed6b8-bb3c-4a41-a846-a42c794c3d5e}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Set CET Sales to metadata"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{B0939D19-D6F6-478B-BBC5-785E0CAB9056}"
+          SQLTask:Connection="{DA380F2D-BF78-4E15-B9B8-EB97EC5148C4}"
           SQLTask:SqlStatementSource="SELECT GETDATE() AS Current_CET"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -6019,21 +5299,12 @@ WHERE
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LCET to Customer"
-<<<<<<< HEAD
       DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{E28DB52E-7B5C-40F6-8B04-4F471B9317CB}"
           SQLTask:SqlStatementSource="UPDATE ETL_Load_Control&#xA;SET LSET = ?&#xA;WHERE name = 'DimCustomer_Load';&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-=======
-      DTS:ThreadHint="2">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{B0939D19-D6F6-478B-BBC5-785E0CAB9056}"
-          SQLTask:SqlStatementSource="UPDATE ETL_Load_Control&#xA;SET LSET = CET&#xA;WHERE name = 'DimCustomer_Load';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
             SQLTask:DtsVariableName="User::CET"
@@ -6051,7 +5322,6 @@ WHERE
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LCET to Product"
-<<<<<<< HEAD
       DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -6076,40 +5346,11 @@ WHERE
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update LCET to Sales"
-=======
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-<<<<<<< HEAD
           SQLTask:Connection="{DA380F2D-BF78-4E15-B9B8-EB97EC5148C4}"
-=======
-          SQLTask:Connection="{B0939D19-D6F6-478B-BBC5-785E0CAB9056}"
-          SQLTask:SqlStatementSource="UPDATE ETL_Load_Control&#xA;SET LSET = CET&#xA;WHERE name = 'DimProduct_Load';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-          <SQLTask:ParameterBinding
-            SQLTask:ParameterName="0"
-            SQLTask:DtsVariableName="User::CET"
-            SQLTask:ParameterDirection="Input"
-            SQLTask:DataType="3"
-            SQLTask:ParameterSize="-1" />
-        </SQLTask:SqlTaskData>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Update LCET to Sales"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{67ca60c8-6cdb-485e-ba4b-e42b2ff6f1cd}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Update LCET to Sales"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{B0939D19-D6F6-478B-BBC5-785E0CAB9056}"
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
           SQLTask:SqlStatementSource="UPDATE ETL_Load_Control&#xA;SET LSET = CET&#xA;WHERE name = 'dbo.Sales_Combined_Stage';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
@@ -6130,22 +5371,6 @@ WHERE
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Get LSET to Customer" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{a8c44ac6-3470-4ed2-89a9-c2a687e8ce47}"
-      DTS:From="Package\Get LSET to Product"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1 1"
-      DTS:To="Package\Import Product to Stage" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1 1 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{4cba5297-e6c2-4557-9e7f-18fd28148d0a}"
-      DTS:From="Package\Get LSET to Sales"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1 1 1"
-      DTS:To="Package\Import Sales to Stage" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1 1]"
       DTS:CreationName=""
@@ -6202,7 +5427,6 @@ WHERE
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3 1"
       DTS:To="Package\Get LSET to Sales" />
-<<<<<<< HEAD
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
@@ -6211,8 +5435,6 @@ WHERE
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\Import Customer to Stage" />
-=======
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -6227,140 +5449,6 @@ WHERE
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib">
         <NodeLayout
-<<<<<<< HEAD
-          Size="174,42"
-          Id="Package\Get LSET to Product"
-          TopLeft="33.5,97.5" />
-        <NodeLayout
-          Size="193,42"
-          Id="Package\Import Product to Stage"
-          TopLeft="24.5,187.5" />
-        <NodeLayout
-          Size="216,42"
-          Id="Package\Set CET Product to metadata"
-          TopLeft="5.5,5.5" />
-        <NodeLayout
-          Size="192,42"
-          Id="Package\Update LCET to Product"
-          TopLeft="22.5,285.5" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="117,47.5">
-=======
-          Size="183,42"
-          Id="Package\Get LSET to Customer"
-          TopLeft="33.5,97.5" />
-        <NodeLayout
-          Size="202,42"
-          Id="Package\Import Customer to Stage"
-          TopLeft="24.5,187.5" />
-        <NodeLayout
-          Size="225,42"
-          Id="Package\Set CET Customer to metadata"
-          TopLeft="5.5,5.5" />
-        <NodeLayout
-          Size="201,42"
-          Id="Package\Update LCET to Customer"
-          TopLeft="22.5,285.5" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="121.5,47.5">
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-<<<<<<< HEAD
-          Id="Package.PrecedenceConstraints[Constraint 1 1]"
-          TopLeft="120.75,139.5">
-=======
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="125.25,139.5">
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48"
-              Start="0,0"
-              End="0,40.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-<<<<<<< HEAD
-          Id="Package.PrecedenceConstraints[Constraint 2 1]"
-          TopLeft="119.75,229.5">
-=======
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="124.25,229.5">
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56"
-              Start="0,0"
-              End="0,48.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <GroupLayout
-<<<<<<< HEAD
-=======
-          Text="Customer"
-          ParentId="Package"
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="236,382"
-          Size="236,425"
-          Id="21883ee4-dfa6-44e5-b800-7238ccc557b9"
-          TopLeft="62.5,5.5">
-          <GroupLayout.ChildrenIds>
-            <s:String>Package\Get LSET to Customer</s:String>
-            <s:String>Package\Import Customer to Stage</s:String>
-            <s:String>Package\Set CET Customer to metadata</s:String>
-            <s:String>Package\Update LCET to Customer</s:String>
-            <s:String>Package.PrecedenceConstraints[Constraint]</s:String>
-            <s:String>Package.PrecedenceConstraints[Constraint 1]</s:String>
-            <s:String>Package.PrecedenceConstraints[Constraint 2]</s:String>
-          </GroupLayout.ChildrenIds>
-        </GroupLayout>
-        <NodeLayout
           Size="174,42"
           Id="Package\Get LSET to Product"
           TopLeft="33.5,97.5" />
@@ -6443,7 +5531,6 @@ WHERE
           </EdgeLayout.Labels>
         </EdgeLayout>
         <GroupLayout
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
           Text="Product"
           ParentId="Package"
           HeaderHeight="43"
@@ -6451,11 +5538,7 @@ WHERE
           PanelSize="244,382"
           Size="244,425"
           Id="b0649383-7545-41c0-873a-697c601e773f"
-<<<<<<< HEAD
           TopLeft="325,40">
-=======
-          TopLeft="329,19">
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
           <GroupLayout.ChildrenIds>
             <s:String>Package\Get LSET to Product</s:String>
             <s:String>Package\Import Product to Stage</s:String>
@@ -6579,7 +5662,6 @@ WHERE
             <s:String>Package.PrecedenceConstraints[Constraint 2 1 1]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
-<<<<<<< HEAD
         <NodeLayout
           Size="183,42"
           Id="Package\Get LSET to Customer"
@@ -6681,8 +5763,6 @@ WHERE
             <s:String>Package.PrecedenceConstraints[Constraint]</s:String>
           </GroupLayout.ChildrenIds>
         </GroupLayout>
-=======
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -6692,15 +5772,11 @@ WHERE
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154,42"
-          Id="Package\Import Customer to Stage\Derived Column"
-          TopLeft="118,140" />
-        <NodeLayout
           Size="151,42"
           Id="Package\Import Customer to Stage\Flat File Source"
           TopLeft="119,52" />
         <NodeLayout
-          Size="173,42"
+          Size="166,42"
           Id="Package\Import Customer to Stage\OLE DB Command"
           TopLeft="343,536" />
         <NodeLayout
@@ -6718,28 +5794,20 @@ WHERE
         <NodeLayout
           Size="155,42"
           Id="Package\Import Customer to Stage\Conditional Split"
-<<<<<<< HEAD
           TopLeft="119,399" />
         <NodeLayout
           Size="156,42"
           Id="Package\Import Customer to Stage\Data Conversion"
           TopLeft="117,221" />
-=======
-          TopLeft="112,326" />
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Import Customer to Stage\Data Conversion"
-          TopLeft="116,224" />
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
         <EdgeLayout
           Id="Package\Import Customer to Stage.Paths[UpdateRows]"
           TopLeft="221,441">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="208.5,95"
+              EndConnector="205,95"
               Start="0,0"
-              End="208.5,87.5">
+              End="205,87.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -6750,20 +5818,20 @@ WHERE
                     Point2="0,38.5823754789272"
                     Point3="4,38.5823754789272" />
                   <mssgle:LineSegment
-                    End="204.5,38.5823754789272" />
+                    End="201,38.5823754789272" />
                   <mssgle:CubicBezierSegment
-                    Point1="204.5,38.5823754789272"
-                    Point2="208.5,38.5823754789272"
-                    Point3="208.5,42.5823754789272" />
+                    Point1="201,38.5823754789272"
+                    Point2="205,38.5823754789272"
+                    Point3="205,42.5823754789272" />
                   <mssgle:LineSegment
-                    End="208.5,87.5" />
+                    End="205,87.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="76.1734765625,43.5823754789272,56.153046875,11.609375"
+              BoundingBox="74.4234765625,43.5823754789272,56.153046875,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6903,7 +5971,6 @@ WHERE
         <NodeLayout
           Size="171,42"
           Id="Package\Import Product to Stage\OLE DB Destination"
-<<<<<<< HEAD
           TopLeft="78,554" />
         <NodeLayout
           Size="166,42"
@@ -6917,36 +5984,13 @@ WHERE
           Size="155,42"
           Id="Package\Import Product to Stage\Conditional Split"
           TopLeft="113,420" />
-=======
-          TopLeft="77,460" />
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Import Product to Stage\Flat File Source"
-          TopLeft="119,52" />
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Import Product to Stage\OLE DB Command"
-          TopLeft="336,463" />
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Import Product to Stage\Derived Column"
-          TopLeft="118,140" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Import Product to Stage\Conditional Split"
-          TopLeft="112,326" />
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
         <NodeLayout
           Size="156,42"
           Id="Package\Import Product to Stage\Data Conversion"
           TopLeft="116,224" />
         <EdgeLayout
           Id="Package\Import Product to Stage.Paths[UpdateRows]"
-<<<<<<< HEAD
           TopLeft="215,462">
-=======
-          TopLeft="214,368">
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6982,11 +6026,7 @@ WHERE
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Product to Stage.Paths[NewRows]"
-<<<<<<< HEAD
           TopLeft="164.75,462">
-=======
-          TopLeft="163.75,368">
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -7009,7 +6049,6 @@ WHERE
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-<<<<<<< HEAD
           Id="Package\Import Product to Stage.Paths[Derived Column Output]"
           TopLeft="194,181">
           <EdgeLayout.Curve>
@@ -7084,75 +6123,19 @@ WHERE
           Id="Package\Import Product to Stage\Flat File Source"
           TopLeft="120,52" />
         <EdgeLayout
-=======
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
           Id="Package\Import Product to Stage.Paths[Flat File Source Output]"
           TopLeft="194.75,94">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-<<<<<<< HEAD
               EndConnector="0,45"
               Start="0,0"
               End="0,37.5">
-=======
-              EndConnector="0,46"
-              Start="0,0"
-              End="0,38.5">
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-<<<<<<< HEAD
                     End="0,37.5" />
-=======
-                    End="0,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Product to Stage.Paths[Derived Column Output]"
-          TopLeft="194.5,182">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Import Product to Stage.Paths[Data Conversion Output]"
-          TopLeft="191.75,266">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7277,13 +6260,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-<<<<<<< HEAD
             <mssgm:EdgeLabel
               BoundingBox="0,0,0,0"
               RelativePosition="Any" />
-=======
-            <EdgeLabelCollection />
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7305,13 +6284,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-<<<<<<< HEAD
             <mssgm:EdgeLabel
               BoundingBox="0,0,0,0"
               RelativePosition="Any" />
-=======
-            <EdgeLabelCollection />
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7333,13 +6308,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-<<<<<<< HEAD
             <mssgm:EdgeLabel
               BoundingBox="0,0,0,0"
               RelativePosition="Any" />
-=======
-            <EdgeLabelCollection />
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7361,13 +6332,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-<<<<<<< HEAD
             <mssgm:EdgeLabel
               BoundingBox="0,0,0,0"
               RelativePosition="Any" />
-=======
-            <EdgeLabelCollection />
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7401,13 +6368,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-<<<<<<< HEAD
             <mssgm:EdgeLabel
               BoundingBox="0,0,0,0"
               RelativePosition="Any" />
-=======
-            <EdgeLabelCollection />
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7441,13 +6404,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-<<<<<<< HEAD
             <mssgm:EdgeLabel
               BoundingBox="0,0,0,0"
               RelativePosition="Any" />
-=======
-            <EdgeLabelCollection />
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7505,13 +6464,9 @@ WHERE
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-<<<<<<< HEAD
             <mssgm:EdgeLabel
               BoundingBox="0,0,0,0"
               RelativePosition="Any" />
-=======
-            <EdgeLabelCollection />
->>>>>>> d5097bc36d6415950e809877960391f3234b4a19
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
